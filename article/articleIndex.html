@@ -1,0 +1,122 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <script charset="utf-8" src="js/jquery.min.js?v=01291"></script>
+    <script charset="utf-8" src="js/global.js?v=01291"></script>
+    <script charset="utf-8" src="js/bootstrap.min.js?v=01291"></script>
+    <script charset="utf-8" src="js/template.js?v=01291"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css?v=01291">
+    <link rel="stylesheet" href="css/style.css?v=1?v=01291">
+    <link rel="stylesheet" href="css/member.css?v=01291">
+    <link rel="stylesheet" href="css/order3.css?v=01291">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1;user-scalable=no;">
+    <script charset="utf-8" src="js/jquery.form.js?v=01291"></script>
+    <script charset="utf-8" src="js/prodSort.js?v=01291"></script>
+    <title>Article1</title>
+    <script>
+
+
+
+
+     function goArticle3() {
+         document.getElementById("one").style.borderBottom = '';
+         document.getElementById("two").style.borderBottom = '';
+         document.getElementById("three").style.borderBottom = '2px solid #FFA500';
+         document.getElementById("one2").style.color = '#666';
+         document.getElementById("two2").style.color = '#666';
+         document.getElementById("three2").style.color = '#FFA500';
+
+         var content = document.getElementById("content");
+         content.src = "allArticle3.html";
+         localStorage.setItem("prefer", 3);
+
+     }
+
+  //   function goNew() {
+    //     window.open('http://dqlsll1234.centralus.cloudapp.azure.com/Chestnuts/cmap.pdf', '_blank');
+
+     //}
+     function goArticle2() {
+         document.getElementById("one").style.borderBottom = '';
+         document.getElementById("two").style.borderBottom = '2px solid #FFA500';
+         document.getElementById("three").style.borderBottom = '';
+
+         document.getElementById("one2").style.color = '#666';
+         document.getElementById("two2").style.color = '#FFA500';
+         document.getElementById("three2").style.color = '#666';
+
+         var content = document.getElementById("content");
+         content.src = "allArticle2.html";
+         localStorage.setItem("prefer", 2);
+     }
+     function goArticle() {
+         document.getElementById("one").style.borderBottom = '2px solid #FFA500';
+         document.getElementById("two").style.borderBottom = '';
+         document.getElementById("three").style.borderBottom = '';
+
+         document.getElementById("one2").style.color = '#FFA500';
+         document.getElementById("two2").style.color = '#666';
+         document.getElementById("three2").style.color = '#666';
+
+         var content = document.getElementById("content");
+         content.src = "allArticle.html";
+         localStorage.setItem("prefer",1);
+     }
+
+     function goTo() {
+         if (localStorage.getItem("prefer") == 1) {
+             goArticle();
+         } else if (localStorage.getItem("prefer") == 2) {
+             goArticle2();
+         } else {
+             goArticle3();
+         }
+
+     }
+
+    </script>
+</head>
+<body onload="goTo()">
+
+
+
+
+    <ul class="mod-filter clearfix">
+        <div class="white-bg_2 bb1">
+
+            <li id="one" style="border-bottom:2px solid #FFA500;" onclick="goArticle()">
+                <a title="" id="one2" href="javascript:void(0);" style="font-size:16px;" >ChestNut</a>
+            </li>
+            <li id="two" onclick="goArticle2()">
+                <a title="" id="two2"
+                   href="javascript:void(0);" style="font-size:16px;">
+                    BlackWalnut
+                    </i>
+                </a>
+            </li>
+            <li id="three" onclick="goArticle3()">
+                <a title="" id="three2"
+                   href="javascript:void(0);" style="font-size:16px;">
+                    Elderberry
+                    </i>
+                </a>
+            </li>
+
+        </div>
+    </ul>
+
+    <iframe id="content" style="width:100%;height:100%" src=""></iframe>
+
+
+    
+</body>
+</html>
