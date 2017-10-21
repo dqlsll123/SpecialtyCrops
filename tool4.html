@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1 style="margin-top:45px">Elderberry Financial Decision Support Tool</h1>
+    <script src="finance.js"></script>
+</head>
+<i>version2.0</i>
+<body>
+
+<div id="content">
+    <div>
+        <h4>Note: If “User Defined” is selected, please enter your costs ($/ac)</h4>
+        <h3 style="background-color:#6b92ed">Establishment Decisions:</h3>
+       
+        <div>
+            <label>Site Prep: </label>
+            <select class="option" id="siteprep" onchange="if (this.selectedIndex==3) {document.getElementById('siteprep2').removeAttribute('disabled');}
+else{document.getElementById('siteprep2').setAttribute('disabled','disabled');}">
+                <option value="120">Herbicide only (1 qt/ac.)</option>
+                <option value="150">Herbicide with Discing</option>
+                <option value="29">Open ground (disc/till)</option>
+                <option value="-1">User Defined</option>
+                
+            </select>
+            <br /><label>$</label><input id="siteprep2" style="width:60px" disabled="" type="text" value=""><label>per acre</label>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Spacing(Ft): </label>
+            <select class="option" id="spacing_left" >
+                  <option value="2">2</option>
+                    <option value="4">4</option>
+            </select>
+
+            <lable>  *  </lable>
+           <input id="spacing_right" style="width:60px" type="text" value="12">
+        </div>
+
+
+        <div style="margin-top:20px">
+            <label>Bed Preparation: </label>
+            <select class="option" id="bedpre" onchange="if (this.selectedIndex==4) {document.getElementById('bedpre2').removeAttribute('disabled');}
+else{document.getElementById('bedpre2').setAttribute('disabled','disabled');}">
+                <option value="1232">Organic Mulch/Irrigation</option>
+                <option value="1000">Organic Mulch/No irrigation</option>
+                <option value="350">Plastic Mulch/Irrigation</option>
+                  <option value="100">Plastic Mulch/No irrigation</option>
+                    <option value="-1">User Defined</option>
+            </select>
+              <br /><label>$</label><input id="bedpre2" style="width:60px" disabled="" type="text" value=""><label>per acre</label>
+        </div>
+
+
+        <div style="margin-top:20px">
+            <label>Planting Stock: </label>
+            <select class="option"  id="plantingstock" onchange="if (this.selectedIndex==3) {document.getElementById('plantingstock2').removeAttribute('disabled');}
+else{document.getElementById('plantingstock2').setAttribute('disabled','disabled');}">
+                <option value="1.65">Cuttings (Selected Varieties - per 1000)</option>
+                <option value="5.55">Planted 3" (50 flats)</option>
+                <option value="10.00">Planted Gallon Pots</option>
+                  <option value="-1">User Defined</option>
+            </select>
+              <br /><label>$</label><input id="plantingstock2" style="width:60px" disabled="" type="text" value="">  <label>per acre</label>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Planting Cost: </label>
+            <select class="option"  id="plantingcost" onchange="if (this.selectedIndex==2) {document.getElementById('plantingcost2').removeAttribute('disabled');}
+else{document.getElementById('plantingcost2').setAttribute('disabled','disabled');}">
+                <option value="0.25">Hand</option>
+                <option value="1000">Machine</option>
+                  <option value="-1">User Defined</option>
+            </select>
+              <br /><label>$</label><input id="plantingcost2" style="width:60px" disabled="" type="text" value=""><label>per acre</label>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Fertilization: </label>
+            <select class="option"  id="fert" onchange="if (this.selectedIndex==2) {document.getElementById('fert2').removeAttribute('disabled');}
+else{document.getElementById('fert2').setAttribute('disabled','disabled');}">
+                <option value="35">100 lbs N Chemical</option>
+                <option value="75">100 lbs N Organic</option>
+                <option value="-1">User Defined</option>
+
+            </select>
+              <br /><label>$</label><input id="fert2" style="width:60px" disabled="" type="text" value=""><label>per acre</label>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Permanent Cover: </label>
+            <select class="option" id="permanentcover" onchange="if (this.selectedIndex==1) {document.getElementById('permanentcover2').removeAttribute('disabled');}
+else{document.getElementById('permanentcover2').setAttribute('disabled','disabled');}">
+                <option value="250">Grass mix</option>
+
+                <option value="-1">User Defined</option>
+            </select>
+            <br /><label>$</label><input id="permanentcover2" style="width:60px" disabled="" type="text" value=""><label>per acre</label>
+        </div>
+
+
+
+    </div>
+
+    <div>
+        <h3 style="background-color:#6b92ed">Management Decisions:</h3>
+
+
+
+
+        <div style="margin-top:20px">
+            <label>Mulch/Compost: </label>
+            <select class="option"  id="compost" onchange="if (this.selectedIndex==2) {document.getElementById('compost2').removeAttribute('disabled');}
+else{document.getElementById('compost2').setAttribute('disabled','disabled');}">
+                <option value="280">Compost (premade)</option>
+                <option value="280">Wood Chips</option>
+
+                <option value="-1">User Defined</option>
+
+            </select>
+              <br /><label>$</label><input id="compost2" style="width:60px" disabled="" type="text" value=""><label>per acre</label>
+        </div>
+           <div>
+          <label>Occurrence: </label><br />
+          <label>First Year of Application</label><input id="compostStart" style="width:60px" type="text" value="2"><br />
+          <label>Fertilizer applied every</label> <input id="compostEvery" style="width:60px"  type="text" value="1"><label>years</label>
+           <br /> <label> until year</label><input id="compostUntil" style="width:60px"  type="text" value="25">
+
+           </div>
+
+        <div style="margin-top:20px">
+            <label>Pruning: </label>
+            <select class="option"  id="prun" onchange="if (this.selectedIndex==2) {document.getElementById('prun2').removeAttribute('disabled');}
+else{document.getElementById('prun2').setAttribute('disabled','disabled');}">
+                <option value="35">Machine</option>
+                <option value="100">Manual</option>
+
+                <option value="-1">User Defined</option>
+
+            </select>
+            <br /><label>$</label><input id="prun2" style="width:60px" disabled="" type="text" value=""><label>per acre</label>
+        </div>
+
+        <div>
+     
+            <label>Occurrence: </label><br />
+            <label>First Year of Application</label><input id="prunStart" style="width:60px" type="text" value="2"><br />
+            <label>Fertilizer applied every</label> <input id="prunEvery" style="width:60px" type="text" value="1"><label>years</label>
+            <br /> <label> until year</label><input id="prunUntil" style="width:60px" type="text" value="25">
+
+        </div>
+
+
+        <div style="margin-top:20px">
+            <label>Weed Control: </label>
+
+            <select class="option"  id="weed" onchange="if (this.selectedIndex==1) {document.getElementById('weed2').removeAttribute('disabled');}
+else{document.getElementById('weed2').setAttribute('disabled','disabled');}">
+
+                <option value="50">Mowing</option>
+
+                <option value="-1">User Defined</option>
+
+            </select>
+            <br /><label>$</label><input id="weed2" style="width:60px" disabled="" type="text" value=""><label>per acre</label>
+        </div>
+
+        <div>
+      
+
+            <label>Occurrence: </label><br />
+            <label>First Year of Application</label><input id="weedStart" style="width:60px" type="text" value="2"><br />
+            <label>Fertilizer applied every</label> <input id="weedEvery" style="width:60px" type="text" value="1"><label>years</label>
+            <br /> <label> until year</label><input id="weedUntil" style="width:60px" type="text" value="25">
+
+        </div>
+
+
+        <div style="margin-top:20px">
+            <label>Deer Control: </label>
+
+            <select class="option"  id="deer" onchange="if (this.selectedIndex==6) {document.getElementById('deer2').removeAttribute('disabled');}
+else{document.getElementById('deer2').setAttribute('disabled','disabled');}">
+
+                <option value="349.44">Game Deterrent Fencing</option>
+                <option value="0">None</option>
+                <option value="0.1">Plantskydd® Repellent</option>
+                <option value="47.5">Plotsaver Ribbon</option>
+                <option value="0.05">Tree Guard® Deer Repellent</option>
+                <option value="1.00">Tube Tree Shelters</option>
+                <option value="-1">User Defined</option>
+
+            </select>
+              <br /><label>$</label><input id="deer2" style="width:60px" disabled="" type="text" value=""><label>per acre</label>
+        </div>
+
+                <div>
+              
+
+                    <label>Occurrence: </label><br />
+                    <label>First Year of Application</label><input id="deerStart" style="width:60px" type="text" value="2"><br />
+                    <label>Fertilizer applied every</label> <input id="deerEvery" style="width:60px" type="text" value="1"><label>years</label>
+                    <br /> <label> until year</label><input id="deerUntil" style="width:60px" type="text" value="25">
+                </div>
+
+
+    </div>
+
+    <div>
+        <h3 style="background-color:#6b92ed">Harvesting and Marketing Decisions:</h3>
+
+        <div style="margin-top:20px">
+            <label>Harvest Method: </label>
+
+            <select class="option"  id="method" onchange="if (this.selectedIndex==2) {document.getElementById('method2').removeAttribute('disabled');}
+else{document.getElementById('method2').setAttribute('disabled','disabled');}">
+
+                <option value="0.2">Hand Harvest</option>
+                <option value="0.02">Mechanized (unspecified)</option>
+
+                <option value="-1">User Defined</option>
+
+
+            </select><br /><input id="method2" style="width:60px" disabled="" type="text" value=""><label>per acre</label>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Expected Rate of Return: </label>
+            <br /><input id="returnrate" style="width:60px" type="text" value="3"><label>%</label>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Expected Price/lb for nuts:</label>
+            <br /><label>$</label><input  id="price" style="width:60px" type="text" value="1">
+        </div>
+
+
+    </div>
+
+    <div style="margin-top:20px">
+
+
+
+
+        <button onclick="submit()">submit</button>
+
+
+  </div>  </div>
+<div id="finalResult">
+</div>
+    <script>
+             function submit() {
+
+           if(document.getElementById("siteprep").value==-1){
+               var siteprep = document.getElementById("siteprep2").value
+
+           }else{
+             var siteprep = document.getElementById("siteprep").value
+
+           }
+
+
+            var spacing_left = document.getElementById("spacing_left").value;
+            var spacing_right = document.getElementById("spacing_right").value;
+
+          var initialNumberOfTrees = 43560/(spacing_left*spacing_right);//1
+
+
+            if(document.getElementById("bedpre").value==-1){
+         var bedpre = document.getElementById("bedpre2").value;
+         }else{
+         var bedpre = document.getElementById("bedpre").value;
+
+         }
+
+
+               if(document.getElementById("plantingstock").value==-1){
+            var plantingstock = document.getElementById("plantingstock2").value;
+          }else{
+           var plantingstock = document.getElementById("plantingstock").value*initialNumberOfTrees;
+
+          }
+
+
+
+
+          //  var fert1 = document.getElementById("fert1").value;
+            if(document.getElementById("plantingcost").value==-1){
+            var plantingcost = document.getElementById("plantingcost2").value;
+       }else{
+         var plantingcost = document.getElementById("plantingcost").value*initialNumberOfTrees;
+       }
+
+          //  var treestaking = document.getElementById("treestaking").value;
+
+
+
+
+          //  var irri = document.getElementById("irri").value;
+
+
+        //    var fert2 = document.getElementById("fert2").value;
+            if(document.getElementById("fert").value==-1){
+            var fert = document.getElementById("fert2").value;
+        }else{
+          var fert = document.getElementById("fert").value;
+        }
+
+
+        if(document.getElementById("permanentcover").value==-1){
+        var permanentcover = document.getElementById("permanentcover2").value;
+    }else{
+      var permanentcover = document.getElementById("permanentcover").value;
+    }
+
+
+            if(document.getElementById("compost").value==-1){
+            var compost = document.getElementById("compost2").value;
+        }else{
+          var compost = document.getElementById("compost").value;
+        }
+
+          //  var prun = document.getElementById("prun").value;
+            if(document.getElementById("prun").value==-1){
+            var prun = document.getElementById("prun2").value;
+        }else{
+
+          var prun = document.getElementById("prun").value;
+        }
+
+          //  var weed = document.getElementById("weed").value;
+            if(document.getElementById("weed").value==-1){
+            var weed = document.getElementById("weed2").value;
+        }else{
+           var weed = document.getElementById("weed").value;
+        }
+
+            //var pest = document.getElementById("pest").value;
+
+          //  var disease = document.getElementById("disease").value;
+
+
+        //    var deer = document.getElementById("deer").value;
+            if(document.getElementById("deer").value==-1){
+            var deer = document.getElementById("deer2").value;
+        }else if(document.getElementById("deer").value==0.1||document.getElementById("deer").value==0.05){
+          var deer = document.getElementById("deer2").value*initialNumberOfTrees;
+        }
+        else{
+           var deer = document.getElementById("deer").value;
+        }
+
+            //var method = document.getElementById("method").value;
+            if(document.getElementById("method").value==-1){
+            var method = document.getElementById("method2").value;
+        }else{
+          var method = document.getElementById("method").value;
+        }
+
+            var returnrate = document.getElementById("returnrate").value/100;
+            var price = document.getElementById("price").value;//2
+
+
+
+
+     var yieldPerAcre=[];
+     var revenuePerAcre=[];
+     revenuePerAcre.push(returnrate);
+     if(spacing_left==2){
+
+
+      for(var year=1;year<=25;year++){
+          var dataPerYear=(-0.1283*year*year*year*year+8.6461*
+            year*year*year-224.6*year*year +2407*year-2543.3)
+            *((Math.random() * 0.35) + 0.75);
+            if(dataPerYear>0){
+            var revenuePerYear=dataPerYear*price;
+          }else{
+              revenuePerYear=0;
+            }
+      yieldPerAcre.push(dataPerYear);
+     revenuePerAcre.push(revenuePerYear.toFixed(2));
+      }
+
+     }else{
+       for(var year=1;year<=25;year++){
+       var dataPerYear=(-0.125*year*year*year*year+8.0315*
+         year*year*year-203.09*year*year +2258.5*year-2852.8)
+         *((Math.random() * 0.35) + 0.75);
+         if(dataPerYear>0){
+         var revenuePerYear=dataPerYear*price;
+       }
+       else{
+           revenuePerYear=0;
+         }
+     yieldPerAcre.push(dataPerYear);
+     revenuePerAcre.push(revenuePerYear.toFixed(2));
+
+}
+     }
+
+     var pvOfRevenues = NPV(revenuePerAcre);//3
+
+     var totalCost=[];
+     var cost1 = Number(siteprep)+Number(bedpre)+Number(plantingstock)
+     +Number(plantingcost)+Number(fert)+Number(permanentcover);
+    // document.getElementById("result").innerHTML=cost1;
+     //totalCost.push(cost1);
+
+     var compostEvery = document.getElementById('compostEvery').value;
+     var compostUntil = document.getElementById('compostUntil').value;
+     var compostStart = document.getElementById('compostStart').value;
+
+     var prunEvery = document.getElementById('prunEvery').value;
+     var prunUntil = document.getElementById('prunUntil').value;
+     var prunStart = document.getElementById('prunStart').value;
+
+     var weedEvery = document.getElementById('weedEvery').value;
+     var weedUntil = document.getElementById('weedUntil').value;
+     var weedStart = document.getElementById('weedStart').value;
+
+     var deerEvery = document.getElementById('deerEvery').value;
+     var deerUntil = document.getElementById('deerUntil').value;
+     var deerStart = document.getElementById('deerStart').value;
+
+       var compostCost=[];
+       compostCost.push(0);
+       var prunCost=[];
+       prunCost.push(0);
+       var weedCost=[];
+       weedCost.push(0);
+       var deerCost=[];
+       deerCost.push(0);
+
+      for(var year=2;year<=25;year++){
+        var compostYear;
+      if(year>=compostStart&&year<=compostUntil){
+        if((year-compostStart)%compostEvery==0){
+          compostYear=compost;
+        }else{
+          compostYear=0;
+        }
+
+      }else{
+        compostYear=0;
+      }
+      compostCost.push(compostYear);
+
+      var prunYear;
+    if(year>=prunStart&&year<=prunUntil){
+      if((year-prunStart)%prunEvery==0){
+        prunYear=prun;
+      }else{
+
+        prunYear=0;
+      }
+     }
+     else{
+
+      prunYear=0;
+    }
+    prunCost.push(prunYear);
+
+
+    var weedYear;
+  if(year>=weedStart&&year<=weedUntil){
+    if((year-weedStart)%weedEvery==0){
+      weedYear=weed;
+    }else{
+
+      weedYear=0;
+    }
+   }
+   else{
+
+    weedYear=0;
+  }
+  weedCost.push(weedYear);
+
+  var deerYear;
+if(year>=deerStart&&year<=deerUntil){
+  if((year-deerStart)%deerEvery==0){
+    if(deer<2){
+    deerYear=deer*initialNumberOfTrees;
+  }else{
+deerYear=deer;
+
+    }
+  }else{
+
+    deerYear=0;
+  }
+ }
+ else{
+
+  deerYear=0;
+}
+deerCost.push(deerYear);
+
+      }
+
+
+var harvestCost=[];
+for(var i=0;i<25;i++){
+if(yieldPerAcre[i]>0&&method!=-1){
+  harvestYear=yieldPerAcre[i]*method;
+}else if(yieldPerAcre[i]>0&&method==-1){
+  harvestYear=method;
+}else{
+  harvestYear=0;
+}
+harvestCost.push(harvestYear.toFixed(2));
+}
+totalCost.push(returnrate);
+totalCost.push(cost1);
+for(var i=1;i<25;i++){
+var costYear=Number(compostCost[i])+Number(prunCost[i])+Number(weedCost[i])+
+Number(deerCost[i])+Number(harvestCost[i]);
+totalCost.push(costYear.toFixed(2));
+}
+
+var pvOfCost=NPV(totalCost);//4
+
+var acNPV=pvOfRevenues-pvOfCost;//5
+ //document.getElementById("result").innerHTML=totalCost;
+ var netRevenues=[];
+ for(var i=1;i<=25;i++){
+
+netRevenues.push(revenuePerAcre[i]-totalCost[i]);
+ }
+
+rateOfReturn=MIRR(netRevenues,Number(returnrate)+1,returnrate).toFixed(2);
+
+var rateArray=[];
+var yearBreak=0;//8
+for(var i=0;i<25;i++){
+
+
+  var initalRate=[];
+  for(var j=0;j<=i;j++){
+  initalRate.push(netRevenues[j]);
+
+  }
+
+
+if(MIRR(initalRate,Number(returnrate)+1,returnrate).toFixed(2)<0){
+  yearBreak++;
+}
+}
+var irr=IRR(netRevenues,0);
+var acAVE=PMT(returnrate,60,-acNPV).toFixed(2);
+
+var result="<p style='font-size:20px;text-align:center'>Financial Results</p>"+
+"<div><span>Initial Number of Trees/ac: </span><span style='float:right'>" + initialNumberOfTrees + "</span></div><br>"+
+      "<div><span>Expected Price/lb for nuts: </span><span style='float:right'>$" + price + "</span></div><br>"+
+      "<div><span>PV of Revenues/ac: </span><span style='float:right'>$" +pvOfRevenues.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')  + "</span></div><br>" +
+      "<div><span>PV of Costs/ac: </span><span style='float:right'>$" + pvOfCost.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + "</span></div><br>" +
+      "<div><span>NPV/ac: </span><span style='float:right'>$" + acNPV.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + "</span></div><br>" +
+      "<div><span>Rate of Return(MIRR):</span><span style='float:right'> " +rateOfReturn*100 + "%</span></div><br>"+
+     "<div><span>Internal Rate of Return:</span><span style='float:right'> " +irr.toFixed(2)*100+"%</span></div><br>"+
+      "<div><span>Years to Break Even: </span><span style='float:right'>" + yearBreak + "</span></div><br>"+
+      "<div><span>AVE/ac: </span><span style='float:right'>$" + acAVE.replace(/(\d)(?=(\d{3})+\.)/g, '$1,')+"</span></div>"
+      +"<div style='margin-top:20px'><button onclick='show()'>back</button></div>";
+
+
+
+
+
+
+
+
+//  var result =myArr;
+document.getElementById("content").style.display ='none';
+document.getElementById("finalResult").innerHTML=result;
+//window.scrollTo(0,document.body.scrollHeight);
+// localStorage.setItem("1",initialNumberOfTrees);
+// localStorage.setItem("2",price);
+// localStorage.setItem("3",pvOfRevenues.toFixed(2));
+// localStorage.setItem("4",pvOfCost.toFixed(2));
+// localStorage.setItem("5",acNPV.toFixed(2));
+// localStorage.setItem("6",rateOfReturn*100);
+// localStorage.setItem("7",irr.toFixed(2)*100);
+// localStorage.setItem("8",yearBreak);
+// localStorage.setItem("9",acAVE);
+
+
+  // document.getElementById("result").innerHTML=acAVE;
+  //   4959,5460,5818,6058,6402,6276,6290,6260,6196,6107,5997,5867,
+//    5716,5541,5333,5082,4776,4397,3926,3342);
+
+
+            // var params = "siteprep=" + siteprep +
+            //              "&spacing_left=" + spacing_left +
+            //              "&spacing_right=" + spacing_right +
+            //              "&bedpre=" + bedpre +
+            //             "&plantingstock=" + plantingstock +
+            //              "&plantingcost=" + plantingcost +
+            //              "&fert=" + fert +
+            //              "&permanentcover=" + permanentcover +
+            //              "&compost=" + compost +
+            //              "&prun=" + prun +
+            //              "&weed=" + weed +
+            //              "&deer=" + deer +
+            //              "&method=" + method +
+            //              "&returnrate=" + returnrate +
+            //              "&price=" + price
+            //             ;
+            //             alert(params);
+
+/*
+            var xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onload = function () {
+                if (xmlHttp.status == 200) {
+                    var state = xmlHttp.responseText;
+                   var myArr = JSON.parse(state);
+                   //alert(state);
+                   var result="<p style='font-size:20px;text-align:center'>Financial Results</p>"+
+                   "<div><span>Initial Number of Trees/ac: </span><span style='float:right'>" + myArr[0].toFixed(2) + "</span></div><br>"+
+                         "<div><span>Expected Price/lb for nuts: </span><span style='float:right'>" + myArr[1].toFixed(2) + "</span></div><br>"+
+                         "<div><span>PV of Revenues/ac: </span><span style='float:right'>$" + myArr[2].toFixed(2) + "</span></div><br>" +
+                         "<div><span>PV of Costs/ac: </span><span style='float:right'>$" + myArr[3].toFixed(2) + "</span></div><br>" +
+                         "<div><span>NPV/ac: </span><span style='float:right'>$" + myArr[4].toFixed(2) + "</span></div><br>" +
+                         "<div><span>Rate of Return(MIRR):</span><span style='float:right'> " + (myArr[5]*100).toFixed(2) + "%</span></div><br>"+
+                        "<div><span>Internal Rate of Return:</span><span style='float:right'> " +(myArr[6]*100).toFixed(2)+"%</span></div><br>"+
+                         "<div><span>Years to Break Even: </span><span style='float:right'>" + myArr[7].toFixed(2) + "</span></div><br>"+
+                         "<div><span>AVE/ac: </span><span style='float:right'>$" + myArr[8].toFixed(2)+"</span></div>"
+                //  var result =myArr;
+                  document.getElementById("result").innerHTML=result;
+                  window.scrollTo(0,document.body.scrollHeight);
+                }
+            }
+            var params = "siteprep=" + siteprep +
+                         "&spacing_left=" + spacing_left +
+                         "&spacing_right=" + spacing_right +
+                         "&bedpre=" + bedpre +
+                        "&plantingstock=" + plantingstock +
+                         "&plantingcost=" + plantingcost +
+                         "&fert=" + fert +
+                         "&permanentcover=" + permanentcover +
+                         "&compost=" + compost +
+                         "&prun=" + prun +
+                         "&weed=" + weed +
+                         "&deer=" + deer +
+                         "&method=" + method +
+                         "&returnrate=" + returnrate +
+                         "&price=" + price;
+
+            xmlHttp.open("POST", "http://35.165.97.40/Tool/edbTool.php", true);
+
+
+            xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+
+            xmlHttp.send(params);
+
+
+*/
+
+
+        }
+        function NPV() {
+          // Cast arguments to array
+          var args = [];
+          for (i = 0; i < arguments.length; i++) {
+            args = args.concat(arguments[i]);
+          }
+
+          // Lookup rate
+          var rate = args[0];
+
+
+          // Initialize net present value
+          var value = 0;
+
+          // Loop on all values
+          for (var j = 1; j < args.length; j++) {
+            value += args[j] / Math.pow(1 + rate, j);
+          }
+
+          // Return net present value
+          return value;
+        }
+
+        function MIRR(values, finance_rate, reinvest_rate) {
+          // Initialize number of values
+          var n = values.length;
+
+          // Lookup payments (negative values) and incomes (positive values)
+          var payments = [];
+          var incomes = [];
+          for (var i = 0; i < n; i++) {
+            if (values[i] < 0) {
+              payments.push(values[i]);
+            } else {
+              incomes.push(values[i]);
+            }
+          }
+
+          // Return modified internal rate of return
+          var num = -NPV(reinvest_rate, incomes) * Math.pow(1 + reinvest_rate, n - 1);
+          var den = NPV(finance_rate, payments) * (1 + finance_rate);
+          return Math.pow(num / den, 1 / (n - 1)) - 1;
+        }
+
+
+        function PMT(ir, np, pv, fv, type) {
+      /*
+       * ir   - interest rate per month
+       * np   - number of periods (months)
+       * pv   - present value
+       * fv   - future value
+       * type - when the payments are due:
+       *        0: end of the period, e.g. end of month (default)
+       *        1: beginning of period
+       */
+      var pmt, pvif;
+
+      fv || (fv = 0);
+      type || (type = 0);
+
+      if (ir === 0)
+          return -(pv + fv)/np;
+
+      pvif = Math.pow(1 + ir, np);
+      pmt = - ir * pv * (pvif + fv) / (pvif - 1);
+
+      if (type === 1)
+          pmt /= (1 + ir);
+
+      return pmt;
+  }
+
+
+
+function IRR(values, guess) {
+  // Credits: algorithm inspired by Apache OpenOffice
+
+  // Calculates the resulting amount
+  var irrResult = function(values, dates, rate) {
+    var r = rate + 1;
+    var result = values[0];
+    for (var i = 1; i < values.length; i++) {
+      result += values[i] / Math.pow(r, (dates[i] - dates[0]) / 365);
+    }
+    return result;
+  }
+
+  // Calculates the first derivation
+  var irrResultDeriv = function(values, dates, rate) {
+    var r = rate + 1;
+    var result = 0;
+    for (var i = 1; i < values.length; i++) {
+      var frac = (dates[i] - dates[0]) / 365;
+      result -= frac * values[i] / Math.pow(r, frac + 1);
+    }
+    return result;
+  }
+
+  // Initialize dates and check that values contains at least one positive value and one negative value
+  var dates = [];
+  var positive = false;
+  var negative = false;
+  for (var i = 0; i < values.length; i++) {
+    dates[i] = (i === 0) ? 0 : dates[i - 1] + 365;
+    if (values[i] > 0) positive = true;
+    if (values[i] < 0) negative = true;
+  }
+
+  // Return error if values does not contain at least one positive value and one negative value
+  if (!positive || !negative) return '#NUM!';
+
+  // Initialize guess and resultRate
+  var guess = (typeof guess === 'undefined') ? 0.1 : guess;
+  var resultRate = guess;
+
+  // Set maximum epsilon for end of iteration
+  var epsMax = 1e-10;
+
+  // Set maximum number of iterations
+  var iterMax = 50;
+
+  // Implement Newton's method
+  var newRate, epsRate, resultValue;
+  var iteration = 0;
+  var contLoop = true;
+  do {
+    resultValue = irrResult(values, dates, resultRate);
+    newRate = resultRate - resultValue / irrResultDeriv(values, dates, resultRate);
+    epsRate = Math.abs(newRate - resultRate);
+    resultRate = newRate;
+    contLoop = (epsRate > epsMax) && (Math.abs(resultValue) > epsMax);
+  } while(contLoop && (++iteration < iterMax));
+
+  if(contLoop) return '#NUM!';
+
+  // Return internal rate of return
+  return resultRate;
+}
+
+
+function show() {
+  document.getElementById("content").style.display ='block';
+  document.getElementById("finalResult").innerHTML="";
+}
+
+
+    </script>
+</body>
+</html>

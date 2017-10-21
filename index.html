@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script charset="utf-8" src="js/jquery.min.js?v=01291"></script>
+    <script charset="utf-8" src="js/global.js?v=01291"></script>
+    <script charset="utf-8" src="js/bootstrap.min.js?v=01291"></script>
+    <script charset="utf-8" src="js/template.js?v=01291"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css?v=01291">
+    <link rel="stylesheet" href="css/style.css?v=1?v=01291">
+    <link rel="stylesheet" href="css/member.css?v=01291">
+    <link rel="stylesheet" href="css/order3.css?v=01291">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1;user-scalable=no;">
+    <title>main1</title>
+</head>
+<body>
+    
+    
+    <ul class="mod-filter clearfix" style="position:fixed;" id="headerThree">
+        <div class="white-bg_2 bb1" style="backgroud-color:#6b92ed">
+            
+            <li id="one" style="border-bottom:2px solid #6b92ed;" onclick="goArticle()">
+                <a title="" id="one2" href="javascript:void(0);" style="font-size:16px;">Chestnuts</a>
+            </li>
+            <li id="two" onclick="goArticle2()">
+                <a title="" id="two2"
+                    href="javascript:void(0);" style="font-size:16px;">
+                    Black Walnuts
+                    </i>
+                </a>
+            </li>
+            <li id="three" onclick="goArticle3()">
+                <a title="" id="three2"
+                    href="javascript:void(0);" style="font-size:16px;">
+                    Elderberry
+                    </i>
+                </a>
+            </li>
+            
+        </div>
+    </ul>
+    
+   
+ 
+        
+    <iframe id="page" style="width:100%;height:90%;" frameBorder="0"
+            src="" ></iframe>
+
+
+
+
+
+    <footer class="footer">
+        <div class="foot-con">
+            <div class="foot-con_2">
+                <a href="javascript:void(0);" onclick="goTool()" id="one0" class="active">
+                    <i class="navIcon shop"></i>
+                    <span class="text">Tool</span>
+                </a>
+                <a href="javascript:void(0);" onclick="goArticleIndex()" id="two0">
+                    <i class="navIcon sort"></i>
+                    <span class="text">Info</span>
+                </a>
+                <a href="javascript:void(0);" onclick="goBBS()" id="three0">
+                    <i class="navIcon home"></i>
+                    <span class="text" id="three">Forum</span>
+                </a>
+                <a href="javascript:void(0);" onclick="goContact()" id="four0">
+                    <i style="" class="navIcon member"></i>
+                    <span class="text" id="four">Contact</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+       
+     //  <preference name="StatusBarOverlaysWebView" value="false" />
+     //  <preference name="StatusBarBackgroundColor" value="#000000" />
+     //  <preference name="StatusBarStyle" value="lightcontent" />
+    //   <gap:plugin name="com.phonegap.plugin.statusbar" />
+        
+        
+        
+        function toolArticle(){
+            if(localStorage.getItem("index")==1&&localStorage.getItem("prefer")==1){
+               
+                goTool2();
+            }else if(localStorage.getItem("index")==1&&localStorage.getItem("prefer")==2){
+                goTool3();
+            }else if(localStorage.getItem("index")==1&&localStorage.getItem("prefer")==3){
+                
+                goTool4();
+            }else if(localStorage.getItem("index")==2&&localStorage.getItem("prefer")==1){
+                goArticle();
+            }else if(localStorage.getItem("index")==2&&localStorage.getItem("prefer")==2){
+                goArticle2();
+            }else{
+                goArticle3();
+            }
+            
+        
+        }
+
+function goArticle3() {
+    document.getElementById("one").style.borderBottom = '';
+    document.getElementById("two").style.borderBottom = '';
+    document.getElementById("three").style.borderBottom = '2px solid #6b92ed';
+    document.getElementById("one2").style.color = '#666';
+    document.getElementById("two2").style.color = '#666';
+    document.getElementById("three2").style.color = '#6b92ed';
+    
+    var content = document.getElementById("page");
+    if(localStorage.getItem("index")==1){
+        content.src = "tool4.html";
+    }else if(localStorage.getItem("index")==2){
+        content.src = "article/allArticle3.html";
+    }
+    localStorage.setItem("prefer", 3);
+    
+}
+    
+    //   function goNew() {
+    //     window.open('http://dqlsll1234.centralus.cloudapp.azure.com/Chestnuts/cmap.pdf', '_blank');
+    
+    //}
+    function goArticle2() {
+        document.getElementById("one").style.borderBottom = '';
+        document.getElementById("two").style.borderBottom = '2px solid #6b92ed';
+        document.getElementById("three").style.borderBottom = '';
+        
+        document.getElementById("one2").style.color = '#666';
+        document.getElementById("two2").style.color = '#6b92ed';
+        document.getElementById("three2").style.color = '#666';
+        
+        var content = document.getElementById("page");
+        if(localStorage.getItem("index")==1){
+            content.src = "tool3.html";
+        }else if(localStorage.getItem("index")==2){
+            content.src = "article/allArticle2.html";
+        }
+        localStorage.setItem("prefer", 2);
+    }
+    function goArticle() {
+        document.getElementById("one").style.borderBottom = '2px solid #6b92ed';
+        document.getElementById("two").style.borderBottom = '';
+        document.getElementById("three").style.borderBottom = '';
+        
+        document.getElementById("one2").style.color = '#6b92ed';
+        document.getElementById("two2").style.color = '#666';
+        document.getElementById("three2").style.color = '#666';
+        
+        var content = document.getElementById("page");
+        if(localStorage.getItem("index")==1){
+             content.src = "tool2.html";
+        }else if(localStorage.getItem("index")==2){
+             content.src = "article/allArticle.html";
+        }
+       
+        localStorage.setItem("prefer",1);
+    }
+    
+    
+    
+    
+    
+    function goBBS() {
+        localStorage.setItem("index",3);
+            document.getElementById("one0").className = "";
+
+            document.getElementById("two0").className = '';
+            document.getElementById("three0").className = 'active';
+            document.getElementById("four0").className = '';
+            document.getElementById("headerThree").style.display="none";
+            user = localStorage.getItem("user");
+            document.getElementById("page").src = "http://specialtycrops.freeforums.org/index.php";
+          //  navigator.notification.confirm{
+          //  "Entering forum, please don't click",
+         //   onConfirm,
+         //   '',
+         //   };
+            //alert();
+        }
+        function goArticleIndex() {
+            localStorage.setItem("index",2);
+
+            document.getElementById("one0").className = "";
+
+            document.getElementById("two0").className = 'active';
+            document.getElementById("three0").className = '';
+            document.getElementById("four0").className = '';
+              document.getElementById("headerThree").style.display="block";
+            toolArticle();
+           // document.getElementById("page0").src =  "article/articleIndex.html";
+            //alert();
+        }
+        function goTool() {
+            localStorage.setItem("index",1);
+            document.getElementById("one0").className = "active";
+
+            document.getElementById("two0").className = '';
+            document.getElementById("three0").className = '';
+            document.getElementById("four0").className = '';
+              document.getElementById("headerThree").style.display="block";
+            toolArticle();
+           // document.getElementById("page").src = localStorage.getItem("url")
+           //     + "Tool/tool2.html";
+           //location.assign("toolIndex.html");
+            //document.getElementById("page").src = "toolIndex.html";
+        }
+        function goContact() {
+            localStorage.setItem("index",4);
+            document.getElementById("one0").className = "";
+
+            document.getElementById("two0").className = '';
+            document.getElementById("three0").className = '';
+            document.getElementById("four0").className = 'active';
+              document.getElementById("headerThree").style.display="none";
+  //alert(localStorage.getItem("user"));
+
+
+                document.getElementById("page").src = "contact.html";
+
+               // document.getElementById("page").src = "myProfile.html"
+
+        }
+
+        function onDeviceReady() {
+           StatusBar.hide();
+            localStorage.setItem("index",1);
+            //StatusBar.overlaysWebView(true);
+            if (localStorage.getItem("prefer") == null) {
+                localStorage.setItem("prefer", 1);
+            }
+            
+         goTo();
+            // document.getElementById("page").src = localStorage.getItem("url") + "NutShow/www/article.html";
+           // document.getElementById("page").src = "toolIndex.html";
+           // navigator.splashscreen.show();
+            document.addEventListener("backbutton", function (e) {
+                if(confirm("want to exit app?"))
+
+                {
+
+                    localStorage.setItem("user", "");
+                    navigator.app.exitApp();
+                }
+
+                else {
+
+                }
+            }, false);
+        }
+
+
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+
+
+
+function goTool4() {
+    document.getElementById("one").style.borderBottom = '';
+    document.getElementById("two").style.borderBottom = '';
+    document.getElementById("three").style.borderBottom = '2px solid #6b92ed';
+    
+    document.getElementById("one2").style.color = '#666';
+    document.getElementById("two2").style.color = '#666';
+    document.getElementById("three2").style.color = '#6b92ed';
+    
+    var content = document.getElementById("page");
+    content.src = "tool4.html";
+    localStorage.setItem("prefer",3);
+    
+}
+    
+    //   function goNew() {
+    //     window.open('http://dqlsll1234.centralus.cloudapp.azure.com/Chestnuts/cmap.pdf', '_blank');
+    
+    //}
+    function goTool3() {
+        document.getElementById("one").style.borderBottom = '';
+        document.getElementById("two").style.borderBottom = '2px solid #6b92ed';
+        document.getElementById("three").style.borderBottom = '';
+        
+        document.getElementById("one2").style.color = '#666';
+        document.getElementById("two2").style.color = '#6b92ed';
+        document.getElementById("three2").style.color = '#666';
+        
+        var content = document.getElementById("page");
+        content.src = "tool3.html";
+        localStorage.setItem("prefer", 2);
+    }
+    function goTool2() {
+        document.getElementById("one").style.borderBottom = '2px solid #6b92ed';
+        document.getElementById("two").style.borderBottom = '';
+        document.getElementById("three").style.borderBottom = '';
+        
+        document.getElementById("one2").style.color = '#6b92ed';
+        document.getElementById("two2").style.color = '#666';
+        document.getElementById("three2").style.color = '#666';
+        
+        var content = document.getElementById("page");
+        content.src = "tool2.html";
+        localStorage.setItem("prefer", 1);
+    }
+    function goTo() {
+        if (localStorage.getItem("prefer") == 1) {
+            goTool2();
+        } else if (localStorage.getItem("prefer") == 2) {
+            goTool3();
+        }else{
+            goTool4();
+        }
+        
+    }
+    </script>
+    
+    <!-- Cordova reference, this is added to your app when it's built. -->
+
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>

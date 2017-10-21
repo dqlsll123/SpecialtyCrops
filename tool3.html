@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1 style="margin-top:45px">Black Walnut Financial Decision Support Tool</h1>
+</head>
+<i>version2.0</i>
+<body>
+
+<div id="content">
+    <div>
+        <h4>Note: If “User Defined” is selected, please enter your costs ($/ac)</h4>
+        <h3 style="background-color:#6b92ed">Establishment Decisions:</h3>
+       
+        <div>
+            <label>Site Prep: </label>
+            <select class="option" id="siteprep" onchange="if (this.selectedIndex==2) {document.getElementById('siteprep2').removeAttribute('disabled');}
+else{document.getElementById('siteprep2').setAttribute('disabled','disabled');}">
+                <option value="13">Herbicide only (1 qt/ac.)</option>
+                <option value="10">Dising only</option>
+                <option value="23">Herbicide with Discing</option>
+                <option value="-1">User Defined</option>
+               
+            </select>
+            <br /><label>$</label><input id="siteprep2" style="width:60px" disabled="" type="text" value="">
+            <label>per acre</label>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Spacing(Ft): </label>
+           <input id="spacing_left" style="width:60px" type="text" value="42">
+            <lable>  *  </lable>
+           <input id="spacing_right" style="width:60px" type="text" value="42">
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Layout/Design: </label>
+            <select class="option" id="layout">
+                <option value="1">Diamond</option>
+                <option value="2">Hexagonal</option>
+                <option value="1">Rectangular/Square</option>
+            </select>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Site Index: </label>
+            <select class="option" id="index">
+                <option value="50">50</option>
+                <option value="52">52</option>
+                <option value="54">54</option>
+                <option value="56">56</option>
+                <option value="58">58</option>
+                <option value="60">60</option>
+                <option value="62">62</option>
+                <option value="64">64</option>
+                <option value="66">66</option>
+                <option value="68">68</option>
+                <option value="70">70</option>
+                <option value="72">72</option>
+                <option value="74">74</option>
+                <option value="76">76</option>
+                <option value="78">78</option>
+                <option value="80">80</option>
+            </select>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Planting Stock: </label>
+            <select class="option"  id="plantingstock" onchange="if (this.selectedIndex==4) {document.getElementById('plantingstock2').removeAttribute('disabled');}
+else{document.getElementById('plantingstock2').setAttribute('disabled','disabled');}">
+                <option value="1">Grafted Seedlings</option>
+                <option value="2">Seed</option>
+                <option value="3">Seedlings (bare root)</option>
+                <option value="4">Seedlings (RPM™)</option>
+                <option value="5">User Defined</option>
+            </select>
+              <br /><label>$</label><input id="plantingstock2" style="width:60px" disabled="" type="text" value="">
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Graft technique: </label>
+            <select class="option" id="grafttechniqu">
+                <option value="1">Not Grafted</option>
+                <option value="2">Nursery Grafted</option>
+                <option value="3">Professionally Field Grafted</option>
+                <option value="4">Self Grafted (Bench)</option>
+                <option value="5">Self Grafted (Field)</option>
+            </select>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Fertilization: </label>
+            <select class="option"  id="fert1" onchange="if (this.selectedIndex==2) {document.getElementById('fert12').removeAttribute('disabled');}
+else{document.getElementById('fert12').setAttribute('disabled','disabled');}">
+                <option value="1.02">Good early growth (> 8")</option>
+                <option value="0">Slow early growth (< 8")</option>
+                <option value="-1">User Defined</option>
+
+            </select>
+              <br /><label>$</label><input id="fert12" style="width:60px" disabled="" type="text" value="">
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Tree Staking: </label>
+            <select class="option" id="treestaking" onchange="if (this.selectedIndex==3) {document.getElementById('treestaking2').removeAttribute('disabled');}
+else{document.getElementById('treestaking2').setAttribute('disabled','disabled');}">
+                <option value="1.39">Re-Bar</option>
+                <option value="2.00">Steel conduit pipe</option>
+                <option value="7.00">T-posts</option>
+                <option value="-1">User Defined</option>
+            </select>
+            <br /><label>$</label><input id="treestaking2" style="width:60px" disabled="" type="text" value="">
+            <label>per acre</label>
+        </div>
+
+
+
+    </div>
+
+    <div>
+        <h3 style="background-color:#6b92ed">Management Decisions:</h3>
+
+
+        <div style="margin-top:20px">
+            <label>Thinning: </label>
+            <br /><label>$</label><input id="thinning" style="width:60px" type="text" value="10">  <label>%</label>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Fertilization: </label>
+            <select class="option"  id="fert2" onchange="if (this.selectedIndex==3) {document.getElementById('fert22').removeAttribute('disabled');}
+else{document.getElementById('fert22').setAttribute('disabled','disabled');}">
+                <option value="23">Bearing trees (33% N)</option>
+                <option value="25">Bearing trees (46% N)</option>
+                <option value="1.02">Non-bearing tree</option>
+                <option value="-1">User Defined</option>
+
+            </select>
+              <br /><label>$</label><input id="fert22" style="width:60px" disabled="" type="text" value="">
+              <label>per acre</label>
+        </div>
+
+        <div>
+            <label>Occurrence: </label><br />
+            <label>First Year of Application</label><input id="fert2Start" style="width:60px" type="text" value="2"><br />
+            <label>Fertilizer applied every</label> <input id="fert2Every" style="width:60px" type="text" value="1"><label>years</label>
+            <br /> <label> until year</label><input id="fert2Until" style="width:60px" type="text" value="25">
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Pruning: </label>
+            <select class="option"  id="prun" onchange="if (this.selectedIndex==3) {document.getElementById('prun2').removeAttribute('disabled');}
+else{document.getElementById('prun2').setAttribute('disabled','disabled');}">
+                <option value="0.5">Spring prune</option>
+                <option value="1.0">Spring & Summer Prune</option>
+                <option value="0.5">Summer/Fall prune</option>
+                <option value="-1">User Defined</option>
+
+            </select>
+            <br /><label>$</label><input id="prun2" style="width:60px" disabled="" type="text" value="">
+            <label>per acre</label>
+        </div>
+
+        <div>
+            <label>Occurrence: </label><br />
+            <label>First Year of Application</label><input id="prunStart" style="width:60px" type="text" value="2"><br />
+            <label>Fertilizer applied every</label> <input id="prunEvery" style="width:60px" type="text" value="1"><label>years</label>
+            <br /> <label> until year</label><input id="prunUntil" style="width:60px" type="text" value="25">
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Weed Control: </label>
+
+            <select class="option"  id="weed" onchange="if (this.selectedIndex==4) {document.getElementById('weed2').removeAttribute('disabled');}
+else{document.getElementById('weed2').setAttribute('disabled','disabled');}">
+
+                <option value="10">Discing</option>
+                <option value="8">Herbicide (Roundup TM)</option>
+                <option value="1.3">Mats (weed)</option>
+                <option value="10">Mowing</option>
+                <option value="-1">User Defined</option>
+
+            </select>
+            <br /><label>$</label><input id="weed2" style="width:60px" disabled="" type="text" value=""><label>per acre</label>
+        </div>
+        <div>
+            <label>Occurrence: </label><br />
+            <label>First Year of Application</label><input id="weedStart" style="width:60px" type="text" value="2"><br />
+            <label>Fertilizer applied every</label> <input id="weedEvery" style="width:60px" type="text" value="1"><label>years</label>
+            <br /> <label> until year</label><input id="weedUntil" style="width:60px" type="text" value="25">
+
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Pest Control: </label>
+
+            <select class="option"  id="pest">
+
+                <option value="0">Asana XL</option>
+                <option value="0">Confirm 2F</option>
+                <option value="0">Dipel ES</option>
+                <option value="0">Guthion 2L</option>
+                <option value="0">Imidian 70 WSB</option>
+                <option value="0">Javelin WG</option>
+                <option value="0">Lorsban 4E/Nufos 4E</option>
+                <option value="0">None</option>
+                <option value="0">Sevin 80W</option>
+                <option value="0">Sniper 2E</option>
+                <option value="0">User Defined</option>
+                <option value="0">Warrior</option>
+
+            </select>
+        </div>
+        <div>
+            <label>Occurrence: </label><br />
+            <label>First Year of Application</label><input id="pestStart" style="width:60px" type="text" value="2"><br />
+            <label>Fertilizer applied every</label> <input id="pestEvery" style="width:60px" type="text" value="1"><label>years</label>
+            <br /> <label> until year</label><input id="pestUntil" style="width:60px" type="text" value="25">
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Disease Control: </label>
+
+            <select class="option"  id="disease" onchange="if (this.selectedIndex==5) {document.getElementById('disease2').removeAttribute('disabled');}
+else{document.getElementById('disease2').setAttribute('disabled','disabled');}">
+
+                <option value="0">Abound</option>
+                <option value="0">Flint</option>
+                <option value="0">None</option>
+                <option value="0">Pristine</option>
+                <option value="0">Syllit</option>
+                <option value="-1">User Defined</option>
+
+            </select>
+              <br /><label>$</label><input id="disease2" style="width:60px" disabled="" type="text" value="">
+                <label>per acre</label>
+        </div>
+        <div>
+            <label>Occurrence: </label><br />
+            <label>First Year of Application</label><input id="diseaseStart" style="width:60px" type="text" value="2"><br />
+            <label>Fertilizer applied every</label> <input id="diseaseEvery" style="width:60px" type="text" value="1"><label>years</label>
+            <br /> <label> until year</label><input id="diseaseUntil" style="width:60px" type="text" value="25">
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Deer Control: </label>
+
+            <select class="option"  id="deer" onchange="if (this.selectedIndex==6) {document.getElementById('deer2').removeAttribute('disabled');}
+else{document.getElementById('deer2').setAttribute('disabled','disabled');}">
+
+                <option value="349.44">Game Deterrent Fencing</option>
+                <option value="0">None</option>
+                <option value="0.1">Plantskydd® Repellent</option>
+                <option value="47.5">Plotsaver Ribbon</option>
+                <option value="0.05">Tree Guard® Deer Repellent</option>
+                <option value="1.00">Tube Tree Shelters</option>
+                <option value="-1">User Defined</option>
+
+            </select>
+              <br /><label>$</label><input id="deer2" style="width:60px" disabled="" type="text" value="">
+                <label>per acre</label>
+        </div>
+        <div>
+            <label>Occurrence: </label><br />
+            <label>First Year of Application</label><input id="deerStart" style="width:60px" type="text" value="2"><br />
+            <label>Fertilizer applied every</label> <input id="deerEvery" style="width:60px" type="text" value="1"><label>years</label>
+            <br /> <label> until year</label><input id="deerUntil" style="width:60px" type="text" value="25">
+        </div>
+
+    </div>
+
+    <div>
+        <h3 style="background-color:#6b92ed">Harvesting and Marketing Decisions:</h3>
+
+        <div style="margin-top:20px">
+            <label>Harvest Method: </label>
+
+            <select class="option"  id="method" onchange="if (this.selectedIndex==4) {document.getElementById('method2').removeAttribute('disabled');}
+else{document.getElementById('method2').setAttribute('disabled','disabled');}">
+
+                <option value="20">Hand pickup</option>
+                <option value="-2">Mechanized (unspecified)</option>
+                <option value="-3">Paddock Vac System</option>
+                <option value="15">Nut wizard</option>
+                <option value="-1">User Defined</option>
+
+
+            </select><br /><label>$</label><input id="method2" style="width:60px" disabled="" type="text" value="">
+            <label>per acre</label>
+        </div>
+        <div style="display:none">
+
+
+            <br /><label>$</label><input id="pv1" style="width:60px" type="text" value="1500">
+            <label>N</label>
+            <br /><label>$</label><input id="n1" style="width:60px" type="text" value="10">
+            <label>L</label>
+            <br /><label>$</label><input id="l1" style="width:60px" type="text" value="8.5"><lable>%</lable>
+
+
+            <br /><label>$</label><input id="pv2" style="width:60px" type="text" value="4500">
+            <label>N</label>
+            <br /><label>$</label><input id="n2" style="width:60px" type="text" value="5">
+            <label>L</label>
+            <br /><label>$</label><input id="l2" style="width:60px" type="text" value="8.5"><lable>%</lable>
+        </div>
+          </div>
+
+        <div style="margin-top:20px">
+            <label>Percent Nutmeat: </label>
+
+            <select class="option"  id="percentnutmeat" >
+
+                <option value="0.16">16%</option>
+                <option value="0.18">18%</option>
+                <option value="0.20">20%</option>
+                <option value="0.22">22%</option>
+                <option value="0.24">24%</option>
+                <option value="0.26">26%</option>
+                <option value="0.28">28%</option>
+                <option value="0.30">30%</option>
+                <option value="0.32">32%</option>
+                <option value="0.34">34%</option>
+                <option value="0.36">36%</option>
+                <option value="0.38">38%</option>
+                <option value="0.40">40%</option>
+                <option value="0.42">42%</option>
+  </select>
+
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Nutmeat Grade: </label>
+
+            <select class="option"  id="grade" >
+
+                <option value="0.024">Grade 1</option>
+                <option value="0.022">Grade 2</option>
+                <option value="0.020">Grade 3</option>
+                <option value="0.018">Grade 4</option>
+                <option value="0.016">Grade 5</option>
+
+  </select>
+
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Hulling Methods: </label>
+
+            <select class="option"  id="hmethod" onchange="if (this.selectedIndex==2) {document.getElementById('hmethod2').removeAttribute('disabled');}
+else{document.getElementById('hmethod2').setAttribute('disabled','disabled');}">
+
+                <option value="0.05">Contracted</option>
+                <option value="0.03">On Farm Huller</option>
+                <option value="-1">User Defined</option>
+
+
+    </select><br /><label>$</label><input id="hmethod2" style="width:60px" disabled="" type="text" value="">
+    <label>per lb</label>
+
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Drying Methods: </label>
+
+            <select class="option"  id="dmethod" onchange="if (this.selectedIndex==2) {document.getElementById('dmethod2').removeAttribute('disabled');}
+else{document.getElementById('hmethod2').setAttribute('disabled','disabled');}">
+
+                <option value="0.01">Air Dry</option>
+                <option value="0.15">Mechanized</option>
+                <option value="-1">User Defined</option>
+
+
+    </select><br /><label>$</label><input id="dmethod2" style="width:60px" disabled="" type="text" value="">
+  <label>per lb</label>
+        </div>
+
+
+
+        <div style="margin-top:20px">
+            <label>Distance to Market: </label>
+            <br /><input  id="distance" style="width:60px" type="text" value="70"><label>miles</label>
+        </div>
+
+        <div style="margin-top:20px">
+            <label>Discount Rate: </label>
+            <br /><input  id="discount" style="width:60px" type="text" value="1"><label>%</label>
+        </div>
+
+                <div style="margin-top:20px">
+                    <label>Total Acres Planted: </label>
+                    <br /><input id="acre" style="width:60px" type="text" value="10"><label>Acres</label>
+                </div>
+
+
+
+    <div style="margin-top:20px">
+       <button onclick="submit()">submit</button>
+    </div>
+
+</div>
+</div>
+<div id="finalResult">
+</div>
+    <script>
+        function submit() {
+
+           if(document.getElementById("siteprep").value==-1){
+               var siteprep = document.getElementById("siteprep2").value
+
+           }else{
+             var siteprep = document.getElementById("siteprep").value
+
+           }
+
+
+            var spacing_left = document.getElementById("spacing_left").value;
+            var spacing_right = document.getElementById("spacing_right").value;
+
+            var layout = document.getElementById("layout").value;
+            var index = document.getElementById("index").value;
+
+            if(layout==1){
+              var initialStem = (43560/(spacing_left*spacing_right)).toFixed(2);//1
+            }else{
+              var initialStem = (43560/(3.14*spacing_left*spacing_left/4)).toFixed(2);//1
+
+            }
+
+               if(document.getElementById("plantingstock").value==5){
+            var plantingstock = document.getElementById("plantingstock2").value;
+          }else{
+           var plantingstock = document.getElementById("plantingstock").value;
+
+          }
+
+
+            var grafttechniqu = document.getElementById("grafttechniqu").value;
+
+          //  var fert1 = document.getElementById("fert1").value;
+            if(document.getElementById("fert1").value==-1){
+            var fert1 = document.getElementById("fert12").value;
+       }else{
+         var fert1 = document.getElementById("fert1").value*initialStem;
+       }
+
+          //  var treestaking = document.getElementById("treestaking").value;
+            if(document.getElementById("treestaking").value==-1){
+            var treestaking = document.getElementById("treestaking2").value;
+       }else{
+         var treestaking = document.getElementById("treestaking").value;
+       }
+
+
+
+          //  var irri = document.getElementById("irri").value;
+
+
+            var thinning = document.getElementById("thinning").value;
+
+
+        //    var fert2 = document.getElementById("fert2").value;
+            if(document.getElementById("fert2").value==-1){
+            var fert2 = document.getElementById("fert22").value;
+        }else{
+          var fert2 = document.getElementById("fert2").value;
+        }
+
+
+          //  var prun = document.getElementById("prun").value;
+            if(document.getElementById("prun").value==-1){
+            var prun = document.getElementById("prun2").value;
+        }else{
+
+          var prun = document.getElementById("prun").value;
+        }
+
+          //  var weed = document.getElementById("weed").value;
+            if(document.getElementById("weed").value==-1){
+            var weed = document.getElementById("weed2").value;
+        }else{
+           var weed = document.getElementById("weed").value;
+        }
+
+            var pest = document.getElementById("pest").value;
+
+          //  var disease = document.getElementById("disease").value;
+            if(document.getElementById("disease").value==-1){
+            var disease = document.getElementById("disease2").value;
+        }else{
+          var disease = document.getElementById("disease").value;
+        }
+
+        //    var deer = document.getElementById("deer").value;
+            if(document.getElementById("deer").value==-1){
+            var deer = document.getElementById("deer2").value;
+        }else{
+           var deer = document.getElementById("deer").value;
+        }
+
+            //var method = document.getElementById("method").value;
+            if(document.getElementById("method").value==-1){
+            var method = document.getElementById("method2").value;
+        }else{
+          var method = document.getElementById("method").value;
+        }
+
+var percentnutmeat = document.getElementById("percentnutmeat").value;
+var grade = document.getElementById("grade").value;
+//var hmethod = document.getElementById("hmethod").value;
+//var dmethod = document.getElementById("dmethod").value;
+if(document.getElementById("hmethod").value==-1){
+var hmethod = document.getElementById("hmethod2").value;
+}else{
+var hmethod = document.getElementById("hmethod").value;
+}
+if(document.getElementById("dmethod").value==-1){
+var dmethod = document.getElementById("dmethod2").value;
+}else{
+var dmethod = document.getElementById("dmethod").value;
+}
+
+
+            var distance = document.getElementById("distance").value;
+            var discount = document.getElementById("discount").value;
+            var acre = document.getElementById("acre").value;
+
+
+                        // alert(params);
+
+var row2_H=(index*(3/80)).toFixed(3);
+var row29_I=(index*0.5/80).toFixed(3);
+
+var row2_G=(row2_H-row29_I).toFixed(3);
+var row2_F=(row2_G-row29_I).toFixed(3);
+var row2_E=(row2_F-row29_I).toFixed(3);
+var row2_D=(row2_E-row29_I).toFixed(3);
+
+var row2=[];
+row2.push(row2_D,row2_E,row2_F,row2_G,row2_H);
+
+var row29=[];
+row29.push(0);
+for(var i=0;i<69;i++){
+  row29.push(row29_I);
+}
+
+
+
+var row13=[];
+row13.push(initialStem);//count:1
+
+var row15=[];
+var row15_1=(Math.random() * 0.08*row13[0]).toFixed(2);
+row15.push(row15_1);
+var row15_2=(Math.random() * 0.08*row13[0]).toFixed(2);
+row15.push(row15_2);//count:2
+
+var row28=[];
+row28.push(1);
+
+var row11=[];
+var row11_1=Math.pow((((row13[0]*3.14*(0.997*(row2[0])+2.436)*
+(0.997*(row2[0])+2.436))/44000)*100), 1.5);
+row11.push(row11_1);//count:1
+
+var row17=[];
+if(row28[0]>0.8){
+  row17.push(0);
+}else{
+  row17.push(row13[0]*thinning/100);
+}
+
+var row11_2=Math.pow((((row13[0]*3.14*(0.997*(row2[1])+2.436)*
+(0.997*(row2[1])+2.436))/44000)*100), 1.5);
+row11.push(row11_2);
+
+if(row11[1]<80){
+var row28_2=1;
+}else{
+  var row28_2=(1.411-(0.00485*row11[1])-(7.643/row11[1])).toFixed(2);
+}
+row28.push(row28_2);//count:2
+//=IF(E11<80,1,(1.411-(0.00485*E11)-(7.643/E11)))
+if(row28[1]>0.8){
+  row17.push(0);
+}else{
+  row17.push((row13[0]-row15[0])*thinning/100);
+}
+
+row13.push(row13[0]-row17[1]);
+
+
+for(var i=2;i<70;i++){
+
+if(i<=4){
+
+if(i<10){
+var row15_data=(Math.random() * 0.08*row13[i-1]).toFixed(2);
+}else{
+var row15_data=0;
+}
+row15.push(row15_data);
+
+var row11_data=Math.pow((((row13[i-1]*3.14*(0.997*(row2[i])+2.436)*
+(0.997*(row2[i])+2.436))/44000)*100), 1.5);
+row11.push(row11_data);
+
+if(row11[i]<80){
+
+  var row28_data=1;
+}else{
+    var row28_data=(1.411-(0.00485*row11[i])-(7.643/row11[i])).toFixed(2);
+}
+row28.push(row28_data);
+
+if(row28[i]>0.8){
+  row17.push(0);
+}else{
+  row17.push((row13[i-1]-row15[i-1])*thinning/100);
+}
+
+if(i==4){
+row13.push(row13[i-1]-row15[i-1]-row17[i]);
+}else{
+  row13.push(row13[i-1]-row17[i]);
+}
+}else{
+var row2_data=Number(row2[i-1])+Number(row29[i-1])*Number(row28[i-1]);
+row2.push(row2_data);
+
+
+if(i<10){
+var row15_data=(Math.random() * 0.08*row13[i-1]).toFixed(2);
+}else{
+var row15_data=0;
+}
+row15.push(row15_data);
+
+if(i==5){
+//  alert(row13[i-1]);
+//  alert(row2[i]);
+}
+
+var row11_data=Math.pow((((Number(row13[i-1])*3.14*(0.997*(Number(row2[i]))+2.436)*
+(0.997*(Number(row2[i]))+2.436))/44000)*100), 1.5);
+row11.push(row11_data);
+
+if(row11[i]<80){
+
+  var row28_data=1;
+}else{
+    var row28_data=(1.411-(0.00485*row11[i])-(7.643/row11[i])).toFixed(2);
+}
+row28.push(row28_data);
+
+if(row28[i]>0.8){
+  row17.push(0);
+}else{
+  row17.push((row13[i-1]-row15[i-1])*thinning/100);
+}
+row13.push(row13[i-1]-row17[i]);
+
+
+
+}}//for
+var row21=[];
+for(var i=0;i<70;i++){
+var row21_data=(6*row2[i]-8.304).toFixed(2);
+row21.push(row21_data);
+
+}
+
+
+if(plantingstock==5){
+  pg1=plantingstock;
+}else if((plantingstock==1&&grafttechniqu==1)||(plantingstock==2&&grafttechniqu==2)||
+(plantingstock==3&&grafttechniqu==2)||(plantingstock==4&&grafttechniqu==4)){
+  pg1=0;
+}else if ((plantingstock==1&&grafttechniqu==2)||(plantingstock==1&&grafttechniqu==3)) {
+  pg1=22.5*initialStem;
+}else if (plantingstock==2&&grafttechniqu==1) {
+  pg1=0.5*initialStem;
+}else if (plantingstock==3&&grafttechniqu==1) {
+  pg1=7*initialStem;
+}else if (plantingstock==4&&grafttechniqu==1) {
+  pg1=13*initialStem;
+}else if (plantingstock==2&&grafttechniqu==3) {
+  pg1=12.5*initialStem;
+}else if (plantingstock==3&&grafttechniqu==3) {
+  pg1=19*initialStem;
+}else if ((plantingstock==4&&grafttechniqu==2)||(plantingstock==4&&grafttechniqu==3)) {
+  pg1=25*initialStem;
+}else if((plantingstock==1&&grafttechniqu==4)||(plantingstock==1&&grafttechniqu==5)||
+(plantingstock==2&&grafttechniqu==4)||(plantingstock==2&&grafttechniqu==5)){
+  pg1=6.5*initialStem;
+}else if ((plantingstock==3&&grafttechniqu==4)||(plantingstock==3&&grafttechniqu==5)) {
+  pg1=13*initialStem;
+}else{
+  pg1=19*initialStem;
+}
+pg2=(pg1/initialStem)*row15[0];
+pg3=(pg1/initialStem)*row15[1];
+pg4=(pg1/initialStem)*row15[2];
+
+var row6=[];
+var row8=[];
+for(var i=0;i<70;i++){
+  var row6_data=(3.14*(row2[i]/2)*(row2[i]/2)).toFixed(2);
+  row6.push(row6_data);
+  var row8_data=(row6[i]*row13[i]/144).toFixed(2);
+  row8.push(row8_data);
+}
+
+var row51=[];
+for(var i=0;i<70;i++){
+  var row51_data=(row17[i]*row6[i]*0.042).toFixed(2);
+  row51.push(row51_data);
+}
+
+if(fert2!=1.02){
+  fert2=fert2/initialStem;
+}
+if(prun!=0.5&&prun!=0.1){
+  prun=prun/initialStem;
+}
+if(weed!=1.3){
+  weed=weed/initialStem;
+}
+if(pest!=0){
+  pest=pest/initialStem;
+}
+if(disease!=0){
+  disease=disease/initialStem;
+}
+if(deer!=0&&deer!=0.1&&deer!=0.05&&deer!=1.00){
+  //alert(deer);
+  deer=deer/initialStem;
+}
+
+var fert2Every = document.getElementById('fert2Every').value;
+var fert2Until = document.getElementById('fert2Until').value;
+var fert2Start = document.getElementById('fert2Start').value;
+
+var prunEvery = document.getElementById('prunEvery').value;
+var prunUntil = document.getElementById('prunUntil').value;
+var prunStart = document.getElementById('prunStart').value;
+
+var weedEvery = document.getElementById('weedEvery').value;
+var weedUntil = document.getElementById('weedUntil').value;
+var weedStart = document.getElementById('weedStart').value;
+
+var pestEvery = document.getElementById('pestEvery').value;
+var pestUntil = document.getElementById('pestUntil').value;
+var pestStart = document.getElementById('pestStart').value;
+
+var diseaseEvery = document.getElementById('diseaseEvery').value;
+var diseaseUntil = document.getElementById('diseaseUntil').value;
+var diseaseStart = document.getElementById('diseaseStart').value;
+
+var deerEvery = document.getElementById('deerEvery').value;
+var deerUntil = document.getElementById('deerUntil').value;
+var deerStart = document.getElementById('deerStart').value;
+
+//no pest,no disease
+var fert2Array=[];
+var prunArray=[];
+var weedArray=[];
+var pestArray=[];
+var diseaseArray=[];
+var deerArray=[];
+
+for(var i=2;i<=70;i++ ){
+
+if(i>=fert2Start&&i<=fert2Until){
+  if((i-fert2Start)%fert2Every==0){
+    fert2Year=row13[i-1]*fert2;
+  }else{
+    fert2Year=0;
+  }}else{
+  fert2Year=0;
+}fert2Array.push(fert2Year.toFixed(2));//fert2
+
+if(i>=prunStart&&i<=prunUntil){
+  if((i-prunStart)%prunEvery==0){
+    prunYear=row13[i-1]*prun;
+  }else{
+    prunYear=0;
+  }}else{
+  prunYear=0;
+}prunArray.push(prunYear.toFixed(2));//prun
+
+if(i>=weedStart&&i<=weedUntil){
+  if((i-weedStart)%weedEvery==0){
+    weedYear=row13[i-1]*weed;
+  }else{
+    weedYear=0;
+  }}else{
+  weedYear=0;
+}weedArray.push(weedYear.toFixed(2));//prun one error
+
+pestArray.push(0);//pest one error
+
+diseaseArray.push(0);//disease one error
+
+if(i>=deerStart&&i<=deerUntil){
+  if((i-deerStart)%deerEvery==0){
+    deerYear=row13[i-1]*deer;
+  }else{
+    deerYear=0;
+  }}else{
+  deerYear=0;
+}deerArray.push(deerYear.toFixed(2));//disease one error
+
+}
+
+
+var row22=[];
+for(var i=0;i<70;i++){
+  if(fert1>0){
+    row22_data=row21[i]*0.1;
+  }else{
+    row22_data=0;
+  }
+  row22.push(row22_data);
+}
+var row23=[];
+row23.push(0);
+for(var i=0;i<69;i++){
+  if(row22[i]>0){
+    row23_data=row22[i]*0.5;
+  }else{
+    row23_data=0;
+  }
+  row23.push(row23_data)
+}
+
+var row24=[];
+for(var i=0;i<70;i++){
+  var row24_data=Number(row21[i])+Number(row22[i])+Number(row23[i]);
+  row24.push(row24_data);
+}
+
+var row31=[];
+var nutprice=percentnutmeat*100*grade;
+
+for(var i=0;i<70;i++){
+if(row24[i]<0){
+  row31_data=0;
+}else{
+  row31_data=row24[i]*nutprice;
+}
+row31.push(row31_data);
+}
+
+var row33=[];
+for(var i=0;i<70;i++){
+  var row33_data=(row31[i]*row13[i]).toFixed(2);
+  row33.push(row33_data);
+}
+
+var pv1 = document.getElementById('pv1').value;
+var n1 = document.getElementById('n1').value;
+var l1 = document.getElementById('l1').value;
+
+var pv2 = document.getElementById('pv2').value;
+var n2 = document.getElementById('n2').value;
+var l2 = document.getElementById('l2').value;
+
+var pmt1 = PMT(l1/100,n1,pv1);
+var pmt2 = PMT(l2/100,n2,pv2);
+
+if(method==-2){
+  var g19=(-1*pmt1)/acre;
+}else if(method==-3){
+    var g19=(-1*pmt2)/acre;
+}else{
+  var g19=method;
+}
+
+//g19,hmethod,dmethod
+
+var row68=[];
+for(var i=0;i<70;i++){
+  if(row24[i]>0){
+    var row68_data=g19;
+  }else{
+    var row68_data=0;
+  }
+row68.push(row68_data);
+}
+
+var row72=[];
+for(var i=0;i<70;i++){
+  if(row24[i]>0){
+    var row72_data=(hmethod*row24[i]*row13[i]).toFixed(2);
+  }else{
+    var row72_data=0;
+  }
+row72.push(row72_data);
+}
+
+var row76=[];
+for(var i=0;i<70;i++){
+  if(row24[i]>0){
+    var row76_data=(dmethod*row24[i]*row13[i]).toFixed(2);
+  }else{
+    var row76_data=0;
+  }
+row76.push(row76_data);
+}
+
+var row80=[];
+for(var i=0;i<70;i++){
+  var row80_data=row68[i]+row72[i]+row76[i];
+  row80.push(row80_data);
+}
+
+var row70=[];
+for(var i=0;i<70;i++){
+  if(row80[i]>row33[i]){
+  var  row70_data=0;
+  }else{
+    var  row70_data=row68[i];
+  }
+  row70.push(row70_data);
+}
+
+var row74=[];
+for(var i=0;i<70;i++){
+  if(row80[i]>row33[i]){
+var row74_data=0;
+  }else{
+var row74_data=row72[i];
+  }
+  row74.push(row74_data);
+}
+
+var row78=[];
+for(var i=0;i<70;i++){
+  if(row80[i]>row33[i]){
+var row78_data=0;
+  }else{
+var row78_data=row76[i];
+  }
+    row78.push(row78_data);
+}
+
+var row82=[];
+for(var i=0;i<70;i++){
+  var row82_data=Number(row70[i])+Number(row74[i])+Number(row78[i]);
+  row82.push(row82_data);
+}
+
+var row35=[];
+for(var i=0;i<70;i++){
+  if(row82[i]==0){
+    var row35_data=0;
+  }else{
+    var row35_data=row33[i];
+  }
+  row35.push(row35_data);
+}
+
+
+
+var distance_cost=0.03*distance*2;
+var row84=[];
+for(var i=0;i<70;i++){
+  if(row82[i]>0){
+    var row84_data=distance_cost*row24[i]*row13[i]/1000;
+  }else{
+    var row84_data=0;
+  }
+  row84.push(row84_data);
+}
+
+
+
+var row89=[];
+var row89_1=(Number(siteprep)+Number(pg1)+Number(fert1)+
+Number(treestaking)*Number(initialStem)+Number(row82[0])+Number(row84[0])).toFixed(2);
+row89.push(row89_1);
+var row89_2=(Number(pg2)+Number(row51[1])+Number(fert2Array[0])+
+Number(prunArray[0])+Number(weedArray[0])
++Number(deerArray[0])+Number(row82[1])+Number(row84[1])).toFixed(2);//2
+row89.push(row89_2);
+var row89_3=(Number(pg3)+Number(row51[2])+Number(fert2Array[1])+
+Number(prunArray[1])+Number(weedArray[1])
++Number(deerArray[1])+Number(row82[2])+Number(row84[2])).toFixed(2);//3
+row89.push(row89_3);
+var row89_4=(Number(pg4)+Number(row51[3])+Number(fert2Array[2])+
+Number(prunArray[2])+Number(weedArray[2])
++Number(deerArray[2])+Number(row82[3])+Number(row84[3])).toFixed(2);//4
+row89.push(row89_4);
+
+for(i=4;i<70;i++){
+  var row89_data=(Number(row51[i])+Number(fert2Array[i-1])+
+  Number(prunArray[i-1])+Number(weedArray[i-1])
+  +Number(deerArray[i-1])+Number(row82[i])+Number(row84[i])).toFixed(2);//4
+  row89.push(row89_data);
+}
+
+var pvOfRevenues=NPV(discount/100,row35).toFixed(2);//@3//
+var pvOfCost=NPV(discount/100,row89).toFixed(2);//4
+var npvAc=pvOfRevenues-pvOfCost;//5
+var aevAc=PMT(discount/100,70,-1*npvAc);//6
+
+var netRevenues=[];
+for(var i=0;i<70;i++){
+  netRevenues.push(Number(row35[i])-Number(row89[i]));
+}
+
+var irrAc=IRR(netRevenues,0);//8
+
+var yearBreak=0;//8
+for(var i=0;i<70;i++){
+
+
+  var initalRate=[];
+  for(var j=0;j<=i;j++){
+  initalRate.push(netRevenues[j]);
+
+  }
+if(MIRR(initalRate,Number(discount)/100+1,discount/100).toFixed(2)<0){
+  yearBreak++;
+}
+}
+//document.getElementById("result").innerHTML=row82;
+rateOfReturn=MIRR(netRevenues,Number(discount)/100+1,discount/100).toFixed(2);
+var result="<p style='font-size:20px;text-align:center'>Financial Results</p>"+
+"<div><span>Initial Number of Trees/ac: </span><span style='float:right'>" + initialStem+ "</span></div><br>"+
+      "<div><span>Expected Price/lb for nuts: </span><span style='float:right'>$" + nutprice + "</span></div><br>"+
+      "<div><span>PV of Revenues/ac: </span><span style='float:right'>$" +pvOfRevenues.replace(/(\d)(?=(\d{3})+\.)/g, '$1,')+ "</span></div><br>" +
+      "<div><span>PV of Costs/ac: </span><span style='float:right'>$" + pvOfCost.replace(/(\d)(?=(\d{3})+\.)/g, '$1,')+ "</span></div><br>" +
+      "<div><span>NPV/ac: </span><span style='float:right'>$" + npvAc.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + "</span></div><br>" +
+      "<div><span>Rate of Return(MIRR):</span><span style='float:right'> " +(100*rateOfReturn).toFixed(2) + "%</span></div><br>"+
+     "<div><span>Years to Break Even::</span><span style='float:right'> " +yearBreak+"</span></div><br>"+
+      "<div><span>AVE/ac: </span><span style='float:right'>$" + aevAc.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')+"</span></div>"
+        +"<div style='margin-top:20px'><button onclick='show()'>back</button></div>";;
+//  var result =myArr;
+document.getElementById("content").style.display ='none';
+document.getElementById("finalResult").innerHTML=result;
+//window.scrollTo(0,document.body.scrollHeight);
+//document.getElementById("result").innerHTML=row89.length;
+            // var xmlHttp = new XMLHttpRequest();
+            //
+            // xmlHttp.onload = function () {
+            //     if (xmlHttp.status == 200) {
+            //         var state = xmlHttp.responseText;
+            //        var myArr = JSON.parse(state);
+            //        // alert(state);
+            //        var cell2=myArr[2]+Math.floor(Math.random() * 1000) + 3500;
+            //        var cell3=myArr[3]+Math.floor(Math.random() * 1000) + 1500;
+            //        var result="<p style='font-size:20px;text-align:center'>Financial Results</p>"+
+            //        "<div><span>Initial Number of Trees/ac: </span><span style='float:right'> " + myArr[0].toFixed(2)  + "</span></div><br>"+
+            //              "<div><span>Expected Price/lb for nuts: </span><span style='float:right'> " + myArr[1].toFixed(2)  + "</span></div><br>"+
+            //              "<div><span>PV of Revenues/ac:</span><span style='float:right'>  $" +cell2.toFixed(2)  + "</span></div><br>" +
+            //              "<div><span>PV of Costs/ac: </span><span style='float:right'> $" + cell3.toFixed(2)  + "</span></div><br>" +
+            //              "<div><span>NPV/ac: </span><span style='float:right'> $" + (cell2-cell3).toFixed(2)  + "</span></div><br>" +
+            //              "<div><span>Rate of Return(MIRR): </span><span style='float:right'> " + (Math.floor(Math.random() * 3) + 4).toFixed(2)  + "%</span></div><br>"+
+            //              "<div><span>Years to Break Even:</span><span style='float:right'>  " + (Math.floor(Math.random() * 17) + 3).toFixed(2)  + "</span></div><br>"+
+            //              "<div><span>AVE/ac: </span><span style='float:right'> $" + (Math.floor(Math.random() * 20) + 60).toFixed(2);+"</span></div>"
+            //       document.getElementById("result").innerHTML=result;
+            //       window.scrollTo(0,document.body.scrollHeight);
+            //     }
+            // }
+            // var params = "siteprep=" + siteprep +
+            //              "&spacing_left=" + spacing_left +
+            //              "&spacing_right=" + spacing_right +
+            //              "&layout=" + layout +
+            //              "&index=" + index +
+            //              "&plantingstock=" + plantingstock +
+            //              "&grafttechniqu=" + grafttechniqu +
+            //              "&fert1=" + fert1 +
+            //              "&treestaking=" + treestaking +
+            //              "&thinning=" + thinning +
+            //              "&fert2=" + fert2 +
+            //              "&prun=" + prun +
+            //              "&weed=" + weed +
+            //              "&pest=" + pest +
+            //              "&disease=" + disease +
+            //              "&deer=" + deer +
+            //              "&method=" + method +
+            //              "&percentnutmeat=" + percentnutmeat +
+            //              "&grade=" + grade +
+            //              "&hmethod=" + hmethod +
+            //              "&dmethod=" + dmethod +
+            //              "&distance=" + distance +
+            //              "&discount=" + discount +
+            //              "&acre=" + acre;
+            //
+            //
+            // xmlHttp.open("POST", "http://35.165.97.40/Tool/blwTool.php", true);
+            //
+            //
+            // xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            //
+            //
+            // xmlHttp.send(params);
+            //
+            //
+            //
+
+        }
+
+        function NPV() {
+          // Cast arguments to array
+          var args = [];
+          for (i = 0; i < arguments.length; i++) {
+            args = args.concat(arguments[i]);
+          }
+
+          // Lookup rate
+          var rate = args[0];
+
+
+          // Initialize net present value
+          var value = 0;
+
+          // Loop on all values
+          for (var j = 1; j < args.length; j++) {
+            value += args[j] / Math.pow(1 + rate, j);
+          }
+
+          // Return net present value
+          return value;
+        }
+
+        function MIRR(values, finance_rate, reinvest_rate) {
+          // Initialize number of values
+          var n = values.length;
+
+          // Lookup payments (negative values) and incomes (positive values)
+          var payments = [];
+          var incomes = [];
+          for (var i = 0; i < n; i++) {
+            if (values[i] < 0) {
+              payments.push(values[i]);
+            } else {
+              incomes.push(values[i]);
+            }
+          }
+
+          // Return modified internal rate of return
+          var num = -NPV(reinvest_rate, incomes) * Math.pow(1 + reinvest_rate, n - 1);
+          var den = NPV(finance_rate, payments) * (1 + finance_rate);
+          return Math.pow(num / den, 1 / (n - 1)) - 1;
+        }
+
+
+        function PMT(ir, np, pv, fv, type) {
+          /*
+           * ir   - interest rate per month
+           * np   - number of periods (months)
+           * pv   - present value
+           * fv   - future value
+           * type - when the payments are due:
+           *        0: end of the period, e.g. end of month (default)
+           *        1: beginning of period
+           */
+          var pmt, pvif;
+
+          fv || (fv = 0);
+          type || (type = 0);
+
+          if (ir === 0)
+              return -(pv + fv)/np;
+
+          pvif = Math.pow(1 + ir, np);
+          pmt = - ir * pv * (pvif + fv) / (pvif - 1);
+
+          if (type === 1)
+              pmt /= (1 + ir);
+
+          return pmt;
+      }
+
+
+
+    function IRR(values, guess) {
+    // Credits: algorithm inspired by Apache OpenOffice
+
+    // Calculates the resulting amount
+    var irrResult = function(values, dates, rate) {
+    var r = rate + 1;
+    var result = values[0];
+    for (var i = 1; i < values.length; i++) {
+      result += values[i] / Math.pow(r, (dates[i] - dates[0]) / 365);
+    }
+    return result;
+    }
+
+    // Calculates the first derivation
+    var irrResultDeriv = function(values, dates, rate) {
+    var r = rate + 1;
+    var result = 0;
+    for (var i = 1; i < values.length; i++) {
+      var frac = (dates[i] - dates[0]) / 365;
+      result -= frac * values[i] / Math.pow(r, frac + 1);
+    }
+    return result;
+    }
+
+    // Initialize dates and check that values contains at least one positive value and one negative value
+    var dates = [];
+    var positive = false;
+    var negative = false;
+    for (var i = 0; i < values.length; i++) {
+    dates[i] = (i === 0) ? 0 : dates[i - 1] + 365;
+    if (values[i] > 0) positive = true;
+    if (values[i] < 0) negative = true;
+    }
+
+    // Return error if values does not contain at least one positive value and one negative value
+    if (!positive || !negative) return '#NUM!';
+
+    // Initialize guess and resultRate
+    var guess = (typeof guess === 'undefined') ? 0.1 : guess;
+    var resultRate = guess;
+
+    // Set maximum epsilon for end of iteration
+    var epsMax = 1e-10;
+
+    // Set maximum number of iterations
+    var iterMax = 50;
+
+    // Implement Newton's method
+    var newRate, epsRate, resultValue;
+    var iteration = 0;
+    var contLoop = true;
+    do {
+    resultValue = irrResult(values, dates, resultRate);
+    newRate = resultRate - resultValue / irrResultDeriv(values, dates, resultRate);
+    epsRate = Math.abs(newRate - resultRate);
+    resultRate = newRate;
+    contLoop = (epsRate > epsMax) && (Math.abs(resultValue) > epsMax);
+    } while(contLoop && (++iteration < iterMax));
+
+    if(contLoop) return '#NUM!';
+
+    // Return internal rate of return
+    return resultRate;
+    }
+    function show() {
+      document.getElementById("content").style.display ='block';
+      document.getElementById("finalResult").innerHTML="";
+    }
+    </script>
+</body>
+</html>

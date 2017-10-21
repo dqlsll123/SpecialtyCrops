@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Android">
+      <Configuration>Debug</Configuration>
+      <Platform>Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|iOS">
+      <Configuration>Debug</Configuration>
+      <Platform>iOS</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows-AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows-AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows-x64">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows-x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows-x86">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows-x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows-ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows-ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows Phone 8">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows Phone 8</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Windows Phone (Universal)">
+      <Configuration>Debug</Configuration>
+      <Platform>Windows Phone (Universal)</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Android">
+      <Configuration>Release</Configuration>
+      <Platform>Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|iOS">
+      <Configuration>Release</Configuration>
+      <Platform>iOS</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows-AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>Windows-AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows-x64">
+      <Configuration>Release</Configuration>
+      <Platform>Windows-x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows-x86">
+      <Configuration>Release</Configuration>
+      <Platform>Windows-x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows-ARM">
+      <Configuration>Release</Configuration>
+      <Platform>Windows-ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows Phone 8">
+      <Configuration>Release</Configuration>
+      <Platform>Windows Phone 8</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Windows Phone (Universal)">
+      <Configuration>Release</Configuration>
+      <Platform>Windows Phone (Universal)</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|Android">
+      <Configuration>Distribution</Configuration>
+      <Platform>Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|iOS">
+      <Configuration>Distribution</Configuration>
+      <Platform>iOS</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|Windows-AnyCPU">
+      <Configuration>Distribution</Configuration>
+      <Platform>Windows-AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|Windows-x64">
+      <Configuration>Distribution</Configuration>
+      <Platform>Windows-x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|Windows-x86">
+      <Configuration>Distribution</Configuration>
+      <Platform>Windows-x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|Windows-ARM">
+      <Configuration>Distribution</Configuration>
+      <Platform>Windows-ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|Windows Phone 8">
+      <Configuration>Distribution</Configuration>
+      <Platform>Windows Phone 8</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distribution|Windows Phone (Universal)">
+      <Configuration>Distribution</Configuration>
+      <Platform>Windows Phone (Universal)</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>6ebe3153-31ae-41f1-b8ec-468076028215</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0'">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="hottest.html" />
+    <Content Include="images\icon2.jpg" />
+    <Content Include="loginPage.html" />
+    <Content Include="myProfile.html" />
+    <Content Include="myTopic.html" />
+    <Content Include="plugins\com.synconset.imagepicker\.fetch.json" />
+    <Content Include="plugins\com.synconset.imagepicker\APACHE_LICENSE" />
+    <Content Include="plugins\com.synconset.imagepicker\BSD_LICENSE" />
+    <Content Include="plugins\com.synconset.imagepicker\LICENSE" />
+    <Content Include="plugins\com.synconset.imagepicker\plugin.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\README.md" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\com\synconset\ImagePicker\FakeR.java" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\com\synconset\ImagePicker\ImagePicker.java" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\anim\image_pop_in.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-hdpi\icon.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-hdpi\image_bg.9.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-hdpi\loading_icon.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-ldpi\icon.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-mdpi\icon.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-mdpi\ic_action_discard_dark.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-mdpi\ic_action_discard_light.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-mdpi\ic_action_done_dark.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-mdpi\ic_action_done_light.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-mdpi\ic_launcher.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-xhdpi\ic_action_discard_dark.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-xhdpi\ic_action_discard_light.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-xhdpi\ic_action_done_dark.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-xhdpi\ic_action_done_light.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable-xhdpi\ic_launcher.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\drawable\grid_background.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\layout\actionbar_custom_view_done_discard.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\layout\actionbar_discard_button.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\layout\actionbar_done_button.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\layout\multiselectorgrid.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\values-de\multiimagechooser_strings_de.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\values-es\multiimagechooser_strings_es.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\values-fr\multiimagechooser_strings_fr.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\values-hu\multiimagechooser_strings_hu.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\values-ja\multiimagechooser_strings_ja.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\values-ko\multiimagechooser_strings_ko.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\values\multiimagechooser_strings_en.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\res\values\themes.xml" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\src\ImageFetcher.java" />
+    <Content Include="plugins\com.synconset.imagepicker\src\android\Library\src\MultiImageChooserActivity.java" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCAlbumPickerController.h" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCAlbumPickerController.m" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCAsset.h" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCAsset.m" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCAssetCell.h" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCAssetCell.m" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCAssetPickerFilterDelegate.h" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCAssetSelectionDelegate.h" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCAssetTablePicker.h" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCAssetTablePicker.m" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCImagePickerController.h" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\ELCImagePickerController.m" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\Resources\ELCAlbumPickerController.xib" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\Resources\ELCAssetPicker.xib" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\Resources\ELCAssetTablePicker.xib" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\Resources\Overlay.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\ELCImagePicker\Resources\Overlay@2x.png" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\SOSPicker.h" />
+    <Content Include="plugins\com.synconset.imagepicker\src\ios\SOSPicker.m" />
+    <Content Include="plugins\com.synconset.imagepicker\www\imagepicker.js" />
+    <Content Include="plugins\org.apache.cordova.camera\.fetch.json" />
+    <Content Include="plugins\org.apache.cordova.camera\CONTRIBUTING.md" />
+    <Content Include="plugins\org.apache.cordova.camera\doc\de\index.md" />
+    <Content Include="plugins\org.apache.cordova.camera\doc\es\index.md" />
+    <Content Include="plugins\org.apache.cordova.camera\doc\fr\index.md" />
+    <Content Include="plugins\org.apache.cordova.camera\doc\index.md" />
+    <Content Include="plugins\org.apache.cordova.camera\doc\it\index.md" />
+    <Content Include="plugins\org.apache.cordova.camera\doc\ja\index.md" />
+    <Content Include="plugins\org.apache.cordova.camera\doc\ko\index.md" />
+    <Content Include="plugins\org.apache.cordova.camera\doc\pl\index.md" />
+    <Content Include="plugins\org.apache.cordova.camera\doc\ru\index.md" />
+    <Content Include="plugins\org.apache.cordova.camera\doc\zh\index.md" />
+    <Content Include="plugins\org.apache.cordova.camera\LICENSE" />
+    <Content Include="plugins\org.apache.cordova.camera\NOTICE" />
+    <Content Include="plugins\org.apache.cordova.camera\package.json" />
+    <Content Include="plugins\org.apache.cordova.camera\plugin.xml" />
+    <Content Include="plugins\org.apache.cordova.camera\README.md" />
+    <Content Include="plugins\org.apache.cordova.camera\RELEASENOTES.md" />
+    <Content Include="plugins\org.apache.cordova.camera\src\android\CameraLauncher.java" />
+    <Content Include="plugins\org.apache.cordova.camera\src\android\ExifHelper.java" />
+    <Content Include="plugins\org.apache.cordova.camera\src\android\FileHelper.java" />
+    <Content Include="plugins\org.apache.cordova.camera\src\blackberry10\index.js" />
+    <Content Include="plugins\org.apache.cordova.camera\src\browser\CameraProxy.js" />
+    <Content Include="plugins\org.apache.cordova.camera\src\firefoxos\CameraProxy.js" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ios\CDVCamera.h" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ios\CDVCamera.m" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ios\CDVExif.h" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ios\CDVJpegHeaderWriter.h" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ios\CDVJpegHeaderWriter.m" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ubuntu\back.png" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ubuntu\camera.cpp" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ubuntu\camera.h" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ubuntu\CaptureWidget.qml" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ubuntu\shoot.png" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ubuntu\toolbar-left.png" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ubuntu\toolbar-middle.png" />
+    <Content Include="plugins\org.apache.cordova.camera\src\ubuntu\toolbar-right.png" />
+    <Content Include="plugins\org.apache.cordova.camera\src\windows\CameraProxy.js" />
+    <Content Include="plugins\org.apache.cordova.camera\src\wp\Camera.cs" />
+    <Content Include="plugins\org.apache.cordova.camera\tests\plugin.xml" />
+    <Content Include="plugins\org.apache.cordova.camera\tests\tests.js" />
+    <Content Include="plugins\org.apache.cordova.camera\www\blackberry10\assets\camera.html" />
+    <Content Include="plugins\org.apache.cordova.camera\www\blackberry10\assets\camera.js" />
+    <Content Include="plugins\org.apache.cordova.camera\www\Camera.js" />
+    <Content Include="plugins\org.apache.cordova.camera\www\CameraConstants.js" />
+    <Content Include="plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js" />
+    <Content Include="plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js" />
+    <Content Include="plugins\org.apache.cordova.camera\www\ios\CameraPopoverHandle.js" />
+    <Content Include="scripts\checkLogin.js" />
+    <Content Include="scripts\jquery-1.12.3.js" />
+    <Content Include="scripts\jquery.mobile-1.4.5.js" />
+    <Content Include="scripts\jquery.mobile-1.4.5.min.css" />
+    <Content Include="tool.html" />
+    <Content Include="bbsPage.html" />
+    <Content Include="merges\android\scripts\android2.3-jscompat.js" />
+    <Content Include="merges\android\scripts\platformOverrides.js" />
+    <Folder Include="merges\ios\" />
+    <Content Include="merges\windows\scripts\platformOverrides.js" />
+    <Content Include="merges\windows\scripts\winstore-jscompat.js" />
+    <Folder Include="merges\wp8\" />
+    <Folder Include="res\icons\android\" />
+    <Folder Include="res\icons\ios\" />
+    <Folder Include="res\icons\wp8\" />
+    <Folder Include="res\icons\windows\" />
+    <Folder Include="res\screens\android\" />
+    <Folder Include="res\screens\ios\" />
+    <Folder Include="res\screens\windows\" />
+    <Folder Include="res\screens\wp8\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="index.html" />
+    <TypeScriptCompile Include="scripts\index.ts" />
+    <TypeScriptCompile Include="scripts\platformOverrides.ts" />
+    <Content Include="css\index.css" />
+    <Content Include="packages.config" />
+    <Content Include="res\icons\android\icon-36-ldpi.png" />
+    <Content Include="res\icons\android\icon-48-mdpi.png" />
+    <Content Include="res\icons\android\icon-72-hdpi.png" />
+    <Content Include="res\icons\android\icon-96-xhdpi.png" />
+    <Content Include="res\icons\ios\icon-40.png" />
+    <Content Include="res\icons\ios\icon-40-2x.png" />
+    <Content Include="res\icons\ios\icon-50.png" />
+    <Content Include="res\icons\ios\icon-50-2x.png" />
+    <Content Include="res\icons\ios\icon-57.png" />
+    <Content Include="res\icons\ios\icon-57-2x.png" />
+    <Content Include="res\icons\ios\icon-60.png" />
+    <Content Include="res\icons\ios\icon-60-2x.png" />
+    <Content Include="res\icons\ios\icon-60-3x.png" />
+    <Content Include="res\icons\ios\icon-72.png" />
+    <Content Include="res\icons\ios\icon-72-2x.png" />
+    <Content Include="res\icons\ios\icon-76.png" />
+    <Content Include="res\icons\ios\icon-76-2x.png" />
+    <Content Include="res\icons\ios\icon-small.png" />
+    <Content Include="res\icons\ios\icon-small-2x.png" />
+    <Content Include="res\icons\windows\Square150x150Logo.scale-100.png" />
+    <Content Include="res\icons\windows\Square30x30Logo.scale-100.png" />
+    <Content Include="res\icons\windows\Square310x310Logo.scale-100.png" />
+    <Content Include="res\icons\windows\Square150x150Logo.scale-240.png" />
+    <Content Include="res\icons\windows\Square44x44Logo.scale-240.png" />
+    <Content Include="res\icons\windows\Square70x70Logo.scale-100.png" />
+    <Content Include="res\icons\windows\Square71x71Logo.scale-240.png" />
+    <Content Include="res\icons\windows\StoreLogo.scale-100.png" />
+    <Content Include="res\icons\windows\StoreLogo.scale-240.png" />
+    <Content Include="res\icons\windows\Wide310x150Logo.scale-100.png" />
+    <Content Include="res\icons\windows\Wide310x150Logo.scale-240.png" />
+    <Content Include="res\icons\wp8\ApplicationIcon.png" />
+    <Content Include="res\icons\wp8\Background.png" />
+    <Content Include="res\native\android\ant.properties" />
+    <Content Include="res\screens\android\screen-hdpi-landscape.png" />
+    <Content Include="res\screens\android\screen-hdpi-portrait.png" />
+    <Content Include="res\screens\android\screen-ldpi-landscape.png" />
+    <Content Include="res\screens\android\screen-ldpi-portrait.png" />
+    <Content Include="res\screens\android\screen-mdpi-landscape.png" />
+    <Content Include="res\screens\android\screen-mdpi-portrait.png" />
+    <Content Include="res\screens\android\screen-xhdpi-landscape.png" />
+    <Content Include="res\screens\android\screen-xhdpi-portrait.png" />
+    <Content Include="res\screens\ios\screen-ipad-landscape.png" />
+    <Content Include="res\screens\ios\screen-ipad-landscape-2x.png" />
+    <Content Include="res\screens\ios\screen-ipad-portrait.png" />
+    <Content Include="res\screens\ios\screen-ipad-portrait-2x.png" />
+    <Content Include="res\screens\ios\screen-iphone-568h-2x.png" />
+    <Content Include="res\screens\ios\screen-iphone-landscape-736h.png" />
+    <Content Include="res\screens\ios\screen-iphone-portrait.png" />
+    <Content Include="res\screens\ios\screen-iphone-portrait-2x.png" />
+    <Content Include="res\screens\ios\screen-iphone-portrait-667h.png" />
+    <Content Include="res\screens\ios\screen-iphone-portrait-736h.png" />
+    <Content Include="res\screens\windows\SplashScreen.scale-100.png" />
+    <Content Include="res\screens\windows\SplashScreen.scale-240.png" />
+    <Content Include="res\screens\windows\SplashScreenPhone.scale-240.png" />
+    <Content Include="res\screens\wp8\SplashScreenImage.jpg" />
+    <TypeScriptCompile Include="scripts\typings\cordova\cordova.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\BatteryStatus.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\Camera.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\Contacts.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\Device.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\DeviceMotion.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\DeviceOrientation.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\Dialogs.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\FileSystem.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\FileTransfer.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\Globalization.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\InAppBrowser.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\Media.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\MediaCapture.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\NetworkInformation.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\Push.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\Splashscreen.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\Vibration.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\cordova\plugins\WebSQL.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <DefaultReferenceGroup>Implicit (Multi-Device Apps)</DefaultReferenceGroup>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptCompileOnSaveEnabled>false</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptCompileOnSaveEnabled>false</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Distribution'">
+    <TypeScriptCompileOnSaveEnabled>false</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CordovaTools\vs-mda-targets\Microsoft.MDA.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\CordovaTools\vs-mda-targets\Microsoft.TypeScript.MDA.targets" />
+  <PropertyGroup>
+    <ProjectUISubcaption>Tools for Apache Cordova</ProjectUISubcaption>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetPlatformIdentifier>MDD</TargetPlatformIdentifier>
+  </PropertyGroup>
+  <Target Name="EnsureBuildPrerequisites">
+    <!-- These errors will trigger if building from inside Visual Studio and requirements could not be determined -->
+    <Error Condition="$(MDAPropertiesEvaluated) == 'true' And $(NodeJsDir) == ''" Text="Path to NodeJs could not be determined. Please check that NodeJs has been installed." />
+    <Error Condition="$(MDAPropertiesEvaluated) == 'true' And $(MDAVsixDir) == ''" Text="Path to the Visual Studio Extension for Tools for Apache Cordova could not be determined. Please check that the extension has been installed." />
+    <!-- These errors will trigger if building from outside Visual Studio (e.g. command line) and environment variables have not been set -->
+    <Error Condition="$(MDAPropertiesEvaluated) == '' And $(NodeJsDir) == ''" Text="Path to NodeJs has not been specified. Please check that NodeJs has been installed and set the NodeJsDir environment variable before building." />
+    <Error Condition="$(MDAPropertiesEvaluated) == '' And $(MDAVsixDir) == ''" Text="Path to Visual Studio Extension for Tools for Apache Cordova has not been specified. Please install it and set the MDAVsixDir environment variable before building." />
+    <!-- Sanity check that things exist in the specified places. These are more likely to fail if building outside Visual Studio and the required environment variables have not been set, or set incorrectly. -->
+    <Error Condition="!Exists('$(NodeJsDir)') Or !Exists('$(NodeJsDir)\node.exe')" Text="The specified NodeJs directory $(NodeJsDir) either does not exist, or does not contain node.exe. Please check that NodeJs has been installed, and set the NodeJsDir variable to the correct directory." />
+    <Error Condition="!Exists('$(MDAVsixDir)') Or !Exists('$(MDAVsixDir)\packages\vs-mda')" Text="The specified directory to the Visual Studio extension $(MDAVsixDir)\node.exe either does not exist, or does not contain a packages\vs-mda sub-directory. Please check that the extension directory exists and set the MDAVsixDir variable to the correct directory." />
+    <!-- Installs (if necessary) the supporting Nodejs module -->
+    <Exec Command="&quot;$(MDAVsixDir)&quot;\packages\vs-mda\install &quot;$(NodeJsDir)&quot; &quot;$(MDAVsixDir)&quot;\packages\vs-mda" />
+  </Target>
+</Project>
